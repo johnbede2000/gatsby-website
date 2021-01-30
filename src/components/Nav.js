@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default [
+// data
+const urls = [
   { id: 1, text: 'Home', url: '/' },
   { id: 2, text: 'News', url: '/news/' },
   { id: 3, text: 'About', url: '/about/' },

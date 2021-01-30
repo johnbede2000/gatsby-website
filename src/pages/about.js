@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default [
+// data
+const blurb = [
   {
     id: 1,
     para:

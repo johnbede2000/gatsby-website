@@ -23,9 +23,6 @@ body {
   background-color: #121212;
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 
 img {
@@ -35,36 +32,32 @@ img {
 }
 
 :root {
-  --side-padding: 15px;
-  --topnav-height: 4em;
+  /* --side-padding: 15px; */
+  /* --topnav-height: 4em; */
   --text-light: rgba(255, 255, 255, 0.7);
   --raise-one: #222222;
   --raise-two: #2e2e2e;
-  --menu-breakpoint: 35em; /* depends on number of menu items & words used */
-  --vertical-gap: 20px;
+  /* --menu-breakpoint: 35em; /* depends on number of menu items & words used */
+  --vertical-gap: 2rem;
 }
 
-@media screen and (min-width: 36em) {
+/* @media screen and (min-width: 36em) {
   :root {
     --topnav-height: 6em;
   }
-}
+} */
 
-.max-width-container {
+/* .max-width-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
-}
+} */
 .max-width {
   max-width: 1192px;
-  width: 100%;
+  width: 90vh;
   height: 100%;
-  padding: 0 var(--side-padding);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .text {
@@ -117,11 +110,6 @@ nav {
 
 #nav-list li {
   display: block;
-}
-
-a {
-  color: var(--text-light);
-  text-decoration: none;
 }
 
 a:hover {

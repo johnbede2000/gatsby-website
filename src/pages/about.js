@@ -28,3 +28,9 @@ const blurb = [
       'In recent years he has had a busy schedule as a pianist for countless artists and projects, performing throughout Europe and touring the UK. He lives in West London with his wife and three young children.',
   },
 ];
+
+const about = () => {
+  return <div></div>;
+};
+
+export default about;

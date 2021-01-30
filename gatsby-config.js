@@ -1,20 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: "jazz-musician",
+    title: 'John Cervantes | Jazz Pianist & Composer',
   },
   plugins: [
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-postcss', // do I need this? will it disrupt?
+    'gatsby-plugin-sharp', // images?
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Poppins', 'Jura', 'Bebas Neue'],
+        },
+      },
     },
   ],
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 // data
 const urls = [
@@ -10,3 +11,32 @@ const urls = [
   { id: 6, text: 'Live', url: '/live/' },
   { id: 7, text: 'Contact', url: '/contact/' },
 ];
+
+// style
+const navlinks = {
+  color: 'var(--text-light)',
+  textDecoration: 'none',
+};
+
+const current = {
+  color: 'white',
+};
+
+// markup
+const Nav = () => {
+  return (
+    <ul>
+      {urls.map((page) => {
+        return (
+          <li key={page.id}>
+            <Link style={navlinks} activeStyle={current} to={page.url}>
+              {page.text}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+export default Nav;

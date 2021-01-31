@@ -59,6 +59,7 @@ const Navlink = styled(Link)`
 
 const current = {
   color: 'white',
+  backgroundSize: '0 5px',
 };
 
 // markup
@@ -70,7 +71,6 @@ const Nav = () => {
           return (
             <Navli key={page.id}>
               <Navlink activeStyle={current} to={page.url}>
-                {/* <Link style={navlinks} activeStyle={current} to={page.url}> */}
                 {page.text}
               </Navlink>
             </Navli>

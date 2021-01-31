@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 // data
 const blurb = [
@@ -30,7 +31,15 @@ const blurb = [
 ];
 
 const about = () => {
-  return <div></div>;
+  return (
+    <Layout>
+      <div className="text">
+        {blurb.map((para) => {
+          return <p key={para.id}>{para.para}</p>;
+        })}
+      </div>
+    </Layout>
+  );
 };
 
 export default about;

@@ -3,7 +3,6 @@ module.exports = {
     title: 'John Cervantes | Jazz Pianist & Composer',
   },
   plugins: [
-    'gatsby-plugin-postcss', // do I need this? will it disrupt?
     'gatsby-plugin-sharp', // images?
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

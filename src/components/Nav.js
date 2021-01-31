@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { AiOutlineMenu } from 'react-icons/ai';
+import styled from 'styled-components';
 
 // data
 const urls = [
@@ -13,10 +15,47 @@ const urls = [
 ];
 
 // style
-const navlinks = {
-  color: 'var(--text-light)',
-  textDecoration: 'none',
-};
+
+const Mynav = styled.nav`
+  background-color: var(--raise-one);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: 99;
+`;
+
+const Navul = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+`;
+
+const Navli = styled.li`
+  display: block;
+`;
+
+const Hamburger = styled.li`
+  display: block;
+  font-size: 2rem;
+  color: var(--text-light);
+`;
+
+const Navlink = styled(Link)`
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  background-image: linear-gradient(white, white);
+  background-size: 0 5px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-size: 100% 5px;
+  }
+`;
 
 const current = {
   color: 'white',
@@ -25,17 +64,23 @@ const current = {
 // markup
 const Nav = () => {
   return (
-    <ul>
-      {urls.map((page) => {
-        return (
-          <li key={page.id}>
-            <Link style={navlinks} activeStyle={current} to={page.url}>
-              {page.text}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <Mynav>
+      <Navul>
+        {urls.map((page) => {
+          return (
+            <Navli key={page.id}>
+              <Navlink activeStyle={current} to={page.url}>
+                {/* <Link style={navlinks} activeStyle={current} to={page.url}> */}
+                {page.text}
+              </Navlink>
+            </Navli>
+          );
+        })}
+        <Hamburger>
+          <AiOutlineMenu />
+        </Hamburger>
+      </Navul>
+    </Mynav>
   );
 };
 

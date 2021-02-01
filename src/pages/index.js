@@ -8,8 +8,10 @@ import Layout from '../components/Layout';
 // markup
 const IndexPage = () => {
   return (
-    <Layout>
-      <p>hello world</p>
+    <Layout curr="home">
+      <div className="text section-gap">
+        <p>hello world</p>
+      </div>
     </Layout>
   );
 };

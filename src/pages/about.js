@@ -32,8 +32,8 @@ const blurb = [
 
 const about = () => {
   return (
-    <Layout>
-      <div className="text">
+    <Layout curr="about">
+      <div className="text section-gap">
         {blurb.map((para) => {
           return <p key={para.id}>{para.para}</p>;
         })}

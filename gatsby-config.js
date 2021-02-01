@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'John Cervantes | Jazz Pianist & Composer',
+    siteURL: 'https://wwww.johncervantes.co.uk',
   },
   plugins: [
     'gatsby-plugin-sharp', // images?

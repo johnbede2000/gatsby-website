@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import Layout from '../components/Layout';
 
 // styles
 
@@ -7,8 +8,12 @@ import { Link } from 'gatsby';
 const NotFoundPage = () => {
   return (
     <>
-      <h1>Page Not Found</h1>
-      <Link to="/">Home</Link>
+      <Layout curr="">
+        <div className="text section-gap">
+          <h1>Page Not Found</h1>
+          <Link to="/">Home</Link>
+        </div>
+      </Layout>
     </>
   );
 };

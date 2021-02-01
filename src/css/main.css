@@ -36,9 +36,13 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: white;
+}
+
 :root {
   /* --side-padding: 15px; */
-  /* --topnav-height: 4em; */
+  --mobnav-height: 5em;
   --text-light: rgba(255, 255, 255, 0.7);
   --raise-one: #222222;
   --raise-two: #2e2e2e;
@@ -59,11 +63,11 @@ a {
   width: 100%;
   height: 100%;
 } */
-.width-container {
+/* .width-container {
   max-width: 1170px;
   width: 90vw;
   margin: 0 auto;
-}
+} */
 
 .text {
   column-gap: 2em;
@@ -115,10 +119,6 @@ display: flex;
 /* #nav-list li {
   display: block;
 } */
-
-a:hover {
-  color: white;
-}
 
 /* #nav-list a {
   font-size: 2rem;

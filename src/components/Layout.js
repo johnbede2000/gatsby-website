@@ -1,15 +1,15 @@
 import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
+import { WidthContainer } from '../css/globalstyles';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, curr }) => {
   return (
-    <div className="width-container">
-      <Nav />
-      {children}
-
+    <>
+      <Nav curr={curr} />
+      <WidthContainer>{children}</WidthContainer>
       <Footer />
-    </div>
+    </>
   );
 };
 

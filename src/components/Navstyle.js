@@ -6,12 +6,15 @@ import { Link } from 'gatsby';
 
 const Mynav = styled.nav`
   background-color: var(--raise-one);
-  height: var(--mobnav-height);
   width: 100%;
   z-index: 98;
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  /* &.isOpen ? height: 100%; : height: var(--mobnav-height); */
+
+  height: ${(props) => (props.isOpen ? '100vh' : 'var(--mobnav-height)')};
 `;
 
 const Navul = styled.ul`
@@ -22,8 +25,6 @@ const Navul = styled.ul`
   align-items: center;
   z-index: 99;
   overflow: hidden;
-  @media screen and (min-width: 768px) {
-  }
 `;
 
 const Navli = styled.li`
@@ -69,17 +70,4 @@ const current = {
   display: 'block',
 };
 
-const testing = {
-  // backgroundColor: 'green',
-};
-
-export {
-  Mynav,
-  Navul,
-  Navli,
-  Navlink,
-  Hamburger,
-  Currentpage,
-  current,
-  testing,
-};
+export { Mynav, Navul, Navli, Navlink, Hamburger, Currentpage, current };

@@ -9,7 +9,6 @@ import {
   Hamburger,
   Currentpage,
   current,
-  testing,
 } from './Navstyle';
 
 // data
@@ -27,26 +26,31 @@ const urls = [
 // markup
 
 const Nav = ({ curr }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const toggleMenu = () => {
-    console.log('toggleMenu');
+    setIsOpen(!isOpen);
   };
 
   return (
-    <Mynav>
+    <Mynav isOpen={isOpen}>
       <WidthContainer>
         <Navul>
           <Currentpage>{curr}</Currentpage>
           {urls.map((page) => {
             return (
               <Navli key={page.id}>
-                <Navlink activeStyle={current} to={page.url}>
+                <Navlink
+                  activeStyle={current}
+                  to={page.url}
+                  onClick={toggleMenu}
+                >
                   {page.text}
                 </Navlink>
               </Navli>
             );
           })}
           <Hamburger onClick={toggleMenu}>
-            <AiOutlineMenu style={testing} />
+            <AiOutlineMenu />
           </Hamburger>
         </Navul>
       </WidthContainer>

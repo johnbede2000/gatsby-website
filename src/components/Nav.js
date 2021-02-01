@@ -32,10 +32,10 @@ const Nav = ({ curr }) => {
   };
 
   return (
-    <Mynav isOpen={isOpen}>
+    <Mynav>
       <WidthContainer>
         <Navul>
-          <Currentpage>{curr}</Currentpage>
+          <Currentpage isOpen={isOpen}>{curr}</Currentpage>
           {urls.map((page) => {
             return (
               <Navli key={page.id}>

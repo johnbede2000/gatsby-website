@@ -11,10 +11,7 @@ const Mynav = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  /* &.isOpen ? height: 100%; : height: var(--mobnav-height); */
-
-  height: ${(props) => (props.isOpen ? '100vh' : 'var(--mobnav-height)')};
+  height: var(--mobnav-height);
 `;
 
 const Navul = styled.ul`
@@ -58,9 +55,9 @@ const Navlink = styled(Link)`
 `;
 
 const Currentpage = styled.li`
-  /* text-transform: capitalize; */
   font-size: 2rem;
   font-family: 'Bebas Neue', sans-serif;
+  color: ${(props) => (props.isOpen ? 'var(--raise-one)' : 'white')};
 `;
 
 //  JS objects

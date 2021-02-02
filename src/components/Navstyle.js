@@ -56,10 +56,16 @@ const Navul = styled.ul`
     display: flex;
     flex-direction: column;
     position: absolute;
+    top: var(--mobnav-height);
+    bottom: 0; // I don't need this. Just good padding on the bottom
     width: 100%;
     z-index: 99;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    & > * {
+      margin-bottom: 0.75em;
+    }
   }
 `;
 

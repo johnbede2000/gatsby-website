@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { WidthContainer } from '../css/globalstyles';
 import {
   Headstrip,
@@ -40,7 +40,7 @@ const Nav = ({ curr }) => {
           <Mobitems>
             <Currentpage className={isOpen ? 'open' : null}>{curr}</Currentpage>
             <ToggleButton onClick={toggleMenu}>
-              <AiOutlineMenu />
+              {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </ToggleButton>
           </Mobitems>
         </WidthContainer>

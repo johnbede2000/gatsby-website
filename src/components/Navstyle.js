@@ -63,15 +63,12 @@ const Navul = styled.ul`
     z-index: 98;
     justify-content: center;
     align-items: center;
-
-    & > * {
-      margin-bottom: 0.75em;
-    }
   }
 `;
 
 const Navli = styled.li`
   list-style: none;
+  padding: 0.25em 0;
 `;
 
 const Navlink = styled(Link)`

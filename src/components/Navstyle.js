@@ -31,6 +31,7 @@ const ToggleButton = styled.button`
   color: var(--text-light);
   display: flex;
   align-items: center;
+  z-index: 99;
 
   &:hover {
     color: white;
@@ -56,11 +57,11 @@ const Navul = styled.ul`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: var(--mobnav-height);
-    bottom: 0; // I don't need this. Just good padding on the bottom
+    top: 0;
+    bottom: 0;
     width: 100%;
-    z-index: 99;
-    justify-content: flex-start;
+    z-index: 98;
+    justify-content: center;
     align-items: center;
 
     & > * {

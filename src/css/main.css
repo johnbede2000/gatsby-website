@@ -46,7 +46,7 @@ a:hover {
   --text-light: rgba(255, 255, 255, 0.7);
   --raise-one: #222222;
   --raise-two: #2e2e2e;
-  /* --menu-breakpoint: 35em; /* depends on number of menu items & words used */
+  /* --menu-breakpoint: 768px; */
   --vertical-gap: 2rem;
 }
 

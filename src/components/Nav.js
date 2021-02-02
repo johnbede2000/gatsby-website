@@ -4,6 +4,7 @@ import { WidthContainer } from '../css/globalstyles';
 import {
   Headstrip,
   Mobitems,
+  MyNav,
   Navul,
   Navli,
   Navlink,
@@ -32,10 +33,6 @@ const Nav = ({ curr }) => {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   return (
     <>
       <Headstrip>
@@ -48,23 +45,19 @@ const Nav = ({ curr }) => {
           </Mobitems>
         </WidthContainer>
       </Headstrip>
-      <nav role="navigation">
+      <MyNav as="nav" role="navigation">
         <Navul className={isOpen ? 'open' : null}>
           {urls.map((page) => {
             return (
               <Navli key={page.id}>
-                <Navlink
-                  activeStyle={current}
-                  to={page.url}
-                  onClick={closeMenu}
-                >
+                <Navlink activeStyle={current} to={page.url}>
                   {page.text}
                 </Navlink>
               </Navli>
             );
           })}
         </Navul>
-      </nav>
+      </MyNav>
     </>
   );
 };

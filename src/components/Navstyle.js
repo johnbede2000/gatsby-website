@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { WidthContainer } from '../css/globalstyles';
 
 // styled components
 // default is closed mobile, then open mobile, then media query desktop!
@@ -48,20 +49,42 @@ const Mobitems = styled.div`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const MyNav = styled(WidthContainer)`
+  @media screen and (min-width: 768px) {
+    margin-top: calc(-1 * var(--mobnav-height));
+  }
 `;
 
 const Navul = styled.ul`
   display: none;
   background-color: var(--raise-one);
+
   &.open {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 0;
+    left: 0;
     bottom: 0;
     width: 100%;
     z-index: 98;
     justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    height: var(--mobnav-height);
+    width: 100%;
+    z-index: 98;
+    justify-content: space-between;
     align-items: center;
   }
 `;
@@ -95,6 +118,7 @@ const current = {
 export {
   Headstrip,
   Mobitems,
+  MyNav,
   Navul,
   Navli,
   Navlink,

@@ -2,11 +2,12 @@ import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { WidthContainer } from '../css/globalstyles';
 import {
-  Mynav,
+  Headstrip,
+  Mobitems,
   Navul,
   Navli,
   Navlink,
-  Hamburger,
+  ToggleButton,
   Currentpage,
   current,
 } from './Navstyle';
@@ -31,30 +32,40 @@ const Nav = ({ curr }) => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Mynav>
-      <WidthContainer>
-        <Navul>
-          <Currentpage isOpen={isOpen}>{curr}</Currentpage>
+    <>
+      <Headstrip>
+        <WidthContainer>
+          <Mobitems>
+            <Currentpage className={isOpen ? 'open' : null}>{curr}</Currentpage>
+            <ToggleButton onClick={toggleMenu}>
+              <AiOutlineMenu />
+            </ToggleButton>
+          </Mobitems>
+        </WidthContainer>
+      </Headstrip>
+      <nav role="navigation">
+        <Navul className={isOpen ? 'open' : null}>
           {urls.map((page) => {
             return (
               <Navli key={page.id}>
                 <Navlink
                   activeStyle={current}
                   to={page.url}
-                  onClick={toggleMenu}
+                  onClick={closeMenu}
                 >
                   {page.text}
                 </Navlink>
               </Navli>
             );
           })}
-          <Hamburger onClick={toggleMenu}>
-            <AiOutlineMenu />
-          </Hamburger>
         </Navul>
-      </WidthContainer>
-    </Mynav>
+      </nav>
+    </>
   );
 };
 

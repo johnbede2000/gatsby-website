@@ -4,32 +4,29 @@ import { Link } from 'gatsby';
 // styled components
 // default is closed mobile, then open mobile, then media query desktop!
 
-const Mynav = styled.nav`
+const Headstrip = styled.header`
   background-color: var(--raise-one);
   width: 100%;
-  z-index: 98;
   display: flex;
   flex-direction: row;
   align-items: center;
   height: var(--mobnav-height);
 `;
 
-const Navul = styled.ul`
-  // add width-container class
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
-  overflow: hidden;
+const Currentpage = styled.p`
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+
+  &.open {
+    color: var(--raise-one);
+  }
 `;
 
-const Navli = styled.li`
-  display: none;
-`;
-
-const Hamburger = styled.li`
+const ToggleButton = styled.button`
   display: block;
+  border: none;
+  background: none;
   font-size: 2rem;
   color: var(--text-light);
   display: flex;
@@ -38,6 +35,36 @@ const Hamburger = styled.li`
   &:hover {
     color: white;
   }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const Mobitems = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+`;
+
+const Navul = styled.ul`
+  display: none;
+  background-color: var(--raise-one);
+  &.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const Navli = styled.li`
+  list-style: none;
 `;
 
 const Navlink = styled(Link)`
@@ -54,12 +81,6 @@ const Navlink = styled(Link)`
   }
 `;
 
-const Currentpage = styled.li`
-  font-size: 2rem;
-  font-family: 'Bebas Neue', sans-serif;
-  color: ${(props) => (props.isOpen ? 'var(--raise-one)' : 'white')};
-`;
-
 //  JS objects
 const current = {
   color: 'white',
@@ -67,4 +88,13 @@ const current = {
   display: 'block',
 };
 
-export { Mynav, Navul, Navli, Navlink, Hamburger, Currentpage, current };
+export {
+  Headstrip,
+  Mobitems,
+  Navul,
+  Navli,
+  Navlink,
+  ToggleButton,
+  Currentpage,
+  current,
+};

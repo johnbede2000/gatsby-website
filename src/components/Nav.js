@@ -4,9 +4,9 @@ import { WidthContainer } from '../css/globalstyles';
 import {
   Headstrip,
   Mobitems,
-  MyNav,
-  Navul,
-  Navli,
+  Mynav,
+  Ul,
+  Li,
   Navlink,
   ToggleButton,
   Currentpage,
@@ -45,19 +45,19 @@ const Nav = ({ curr }) => {
           </Mobitems>
         </WidthContainer>
       </Headstrip>
-      <MyNav as="nav" role="navigation">
-        <Navul className={isOpen ? 'open' : null}>
+      <Mynav as="nav" role="navigation">
+        <Ul className={isOpen ? 'open' : null}>
           {urls.map((page) => {
             return (
-              <Navli key={page.id}>
+              <Li key={page.id}>
                 <Navlink activeStyle={current} to={page.url}>
                   {page.text}
                 </Navlink>
-              </Navli>
+              </Li>
             );
           })}
-        </Navul>
-      </MyNav>
+        </Ul>
+      </Mynav>
     </>
   );
 };

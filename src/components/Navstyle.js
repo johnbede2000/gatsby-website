@@ -55,13 +55,13 @@ const Mobitems = styled.div`
   }
 `;
 
-const MyNav = styled(WidthContainer)`
+const Mynav = styled(WidthContainer)`
   @media screen and (min-width: 768px) {
     margin-top: calc(-1 * var(--mobnav-height));
   }
 `;
 
-const Navul = styled.ul`
+const Ul = styled.ul`
   display: none;
   background-color: var(--raise-one);
 
@@ -89,7 +89,7 @@ const Navul = styled.ul`
   }
 `;
 
-const Navli = styled.li`
+const Li = styled.li`
   list-style: none;
   padding: 0.25em 0;
 `;
@@ -118,9 +118,9 @@ const current = {
 export {
   Headstrip,
   Mobitems,
-  MyNav,
-  Navul,
-  Navli,
+  Mynav,
+  Ul,
+  Li,
   Navlink,
   ToggleButton,
   Currentpage,

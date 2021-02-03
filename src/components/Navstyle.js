@@ -5,6 +5,11 @@ import { WidthContainer } from '../css/globalstyles';
 // styled components
 // default is closed mobile, then open mobile, then media query desktop!
 
+const NoGrow = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
+`;
+
 const Headstrip = styled.header`
   background-color: var(--raise-one);
   width: 100%;
@@ -116,6 +121,7 @@ const current = {
 };
 
 export {
+  NoGrow,
   Headstrip,
   Mobitems,
   Mynav,

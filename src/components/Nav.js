@@ -2,6 +2,7 @@ import React from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { WidthContainer } from '../css/globalstyles';
 import {
+  NoGrow,
   Headstrip,
   Mobitems,
   Mynav,
@@ -34,7 +35,7 @@ const Nav = ({ curr }) => {
   };
 
   return (
-    <>
+    <NoGrow>
       <Headstrip>
         <WidthContainer>
           <Mobitems>
@@ -58,7 +59,7 @@ const Nav = ({ curr }) => {
           })}
         </Ul>
       </Mynav>
-    </>
+    </NoGrow>
   );
 };
 

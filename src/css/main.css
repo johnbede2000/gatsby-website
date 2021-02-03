@@ -78,11 +78,6 @@ a:hover {
   margin-top: var(--vertical-gap);
 }
 
-.section-gap {
-  padding-top: var(--vertical-gap);
-  padding-bottom: var(--vertical-gap);
-}
-
 .screen-cover {
   position: absolute; /*no positioned ancestors, so relative to the document body, and moves along with page scrolling (background only fills one screen, moves up when you scroll down)*/
   top: var(--topnav-height);
@@ -211,10 +206,10 @@ display: flex;
 }
 
 footer {
-  flex-grow: 0;
+  /* flex-grow: 0;
   flex-shrink: 0;
   background-color: var(--raise-one);
-  padding: 1rem 0;
+  padding: 1rem 0; */
   font-size: 1.25rem;
   text-align: center;
   width: 100%;
@@ -240,7 +235,7 @@ footer {
 
 main {
   margin-top: var(--topnav-height);
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .stack > * {

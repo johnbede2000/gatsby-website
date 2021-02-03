@@ -33,7 +33,7 @@ const blurb = [
 const about = () => {
   return (
     <Layout curr="about">
-      <div className="text section-gap">
+      <div className="text">
         {blurb.map((para) => {
           return <p key={para.id}>{para.para}</p>;
         })}

@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 const IndexPage = () => {
   return (
     <Layout curr="home">
-      <div className="text section-gap">
+      <div className="text">
         <p>hello world</p>
       </div>
     </Layout>

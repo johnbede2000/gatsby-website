@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { WidthContainer } from '../css/globalstyles';
 import styled from 'styled-components';
 
-const FullHeight = styled.div`
+const MinHeight = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -12,15 +12,18 @@ const FullHeight = styled.div`
 
 const Main = styled(WidthContainer)`
   flex-grow: 1;
+  /* check syntax to change type of tag in this declaration rather than markup*/
+  padding-top: var(--vertical-gap);
+  padding-bottom: var(--vertical-gap);
 `;
 
 const Layout = ({ children, curr }) => {
   return (
-    <FullHeight>
+    <MinHeight>
       <Nav curr={curr} />
-      <WidthContainer as="main">{children}</WidthContainer>
+      <Main as="main">{children}</Main>
       <Footer />
-    </FullHeight>
+    </MinHeight>
   );
 };
 

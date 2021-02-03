@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   return (
     <>
       <Layout curr="">
-        <div className="text section-gap">
+        <div className="text">
           <h1>Page Not Found</h1>
           <Link to="/">Home</Link>
         </div>

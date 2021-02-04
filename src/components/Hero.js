@@ -7,7 +7,7 @@ const query = graphql`
   {
     file(relativePath: { eq: "landscape-trio.jpg" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 5400, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -32,6 +32,7 @@ const Hero = () => {
           width: '100%',
           height: '100%',
           zIndex: '-1',
+          opacity: '0.2',
         }}
         imgStyle={{ objectPosition: 'right 30%' }}
       />

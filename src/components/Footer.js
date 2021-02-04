@@ -48,6 +48,8 @@ const ExternalLinks = styled.div`
 
 const Footerlink = styled.a`
   font-size: 1.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75;
 `;
 
 const Copyright = styled.p`

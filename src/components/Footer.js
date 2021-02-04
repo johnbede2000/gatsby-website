@@ -2,6 +2,8 @@ import React from 'react';
 import { WidthContainer } from '../css/globalstyles';
 import styled from 'styled-components';
 
+const year = new Date().getFullYear();
+
 // style
 const StripofColor = styled.div`
   background-color: var(--raise-one);
@@ -18,7 +20,10 @@ const Footer = () => {
   return (
     <StripofColor>
       <WidthContainer>
-        <p>Hello world</p>
+        <p>
+          Copyright &copy; {year} John Cervantes &middot; Designed and Developed
+          by <a href="https://www.johnbe.de">John Bede</a> · All rights reserved
+        </p>
       </WidthContainer>
     </StripofColor>
   );

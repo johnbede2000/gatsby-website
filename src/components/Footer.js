@@ -41,15 +41,15 @@ const StripofColor = styled.div`
 `;
 
 const ExternalLinks = styled.div`
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Footerlink = styled.a`
   font-size: 1.5rem;
   padding-left: 0.75rem;
-  padding-right: 0.75;
+  padding-right: 0.75rem;
 `;
 
 const Copyright = styled.p`

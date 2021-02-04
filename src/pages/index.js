@@ -1,18 +1,30 @@
-import * as React from 'react';
-import Layout from '../components/Layout';
+import React from 'react';
+import Hero from '../components/Hero';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import styled from 'styled-components';
 
 // styles
+
+const MinHeight = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 // data
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout curr="home">
-      <div className="text">
-        <p>hello world</p>
-      </div>
-    </Layout>
+    <>
+      <MinHeight>
+        <Nav curr="Home" />
+        <Hero />
+
+        <Footer />
+      </MinHeight>
+    </>
   );
 };
 

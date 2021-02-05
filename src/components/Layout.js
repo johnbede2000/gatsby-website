@@ -15,6 +15,7 @@ const Main = styled(WidthContainer)`
   /* check syntax to change type of tag in this declaration rather than markup*/
   padding-top: var(--vertical-gap);
   padding-bottom: var(--vertical-gap);
+  position: relative;
 `;
 
 const Layout = ({ children, curr }) => {

@@ -25,7 +25,7 @@ const Button = styled.button`
 
 const Input = styled.input`
   border-radius: 0.25rem;
-  border: none;
+  border: 1px solid var(--raise-two);
   background-color: var(--raise-two);
   width: 100%;
   color: white;

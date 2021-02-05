@@ -323,9 +323,9 @@ main {
   border-radius: 2px;
 }
 
-#email {
+/* #email {
   width: 288px;
-}
+} */
 
 .btn {
   background-color: var(--raise-two);

@@ -53,15 +53,15 @@ const ContactForm = () => {
       {/* Me: Looks like end of hidden */}
 
       <div>
-        <label for="name">
+        <label htmlFor="name">
           Name:
           <Input id="name" type="text" name="name" onChange={handleChange} />
         </label>
-        <label for="email">
+        <label htmlFor="email">
           Email:
           <Input id="email" type="email" name="email" onChange={handleChange} />
         </label>
-        <label for="msg">
+        <label htmlFor="msg">
           Message:
           <Input
             as="textarea"
@@ -69,6 +69,7 @@ const ContactForm = () => {
             id="msg"
             rows="5"
             onChange={handleChange}
+            style={{ resize: 'vertical' }}
           ></Input>
         </label>
         <Button type="submit">Submit</Button>

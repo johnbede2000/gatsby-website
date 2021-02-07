@@ -83,11 +83,10 @@ const Overlay = styled.div`
 const Parent = styled.div`
   position: relative;
   cursor: pointer;
-`;
-
-const VidImg = styled.div`
   &:hover {
-    opacity: 0.6;
+    /* background-color: rgba(18, 18, 18, 0.4); */
+    /* seems to be behind image for some reason*/
+    background: red;
   }
 `;
 
@@ -96,13 +95,18 @@ const PlayBtn = () => {
     <div
       style={{
         position: 'absolute',
-        top: '50%',
-        left: '50%',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         fontSize: '75px',
-        zIndex: '2',
+        // zIndex: '1',
       }}
     >
-      <FaYoutube />
+      <FaYoutube style={{ zIndex: '1' }} />
     </div>
   );
 };
@@ -125,31 +129,25 @@ const Videos = () => {
       {/* Make Parent into a imported component that receives fluid and alt */}
       <Parent>
         <PlayBtn />
-        <VidImg>
-          <Img
-            fluid={trioImg.node.childImageSharp.fluid}
-            alt="Jazz piano trio video"
-          />
-        </VidImg>
-        <Overlay>Piano Trio</Overlay>
+        <Img
+          fluid={trioImg.node.childImageSharp.fluid}
+          alt="Jazz piano trio video"
+        />
+        {/* <Overlay>Piano Trio</Overlay> */}
       </Parent>
       <Parent>
-        <VidImg>
-          <Img
-            fluid={efgImg.node.childImageSharp.fluid}
-            alt="Live at London Jazz Festival video"
-          />
-        </VidImg>
-        <Overlay>Flamenco Band</Overlay>
+        <Img
+          fluid={efgImg.node.childImageSharp.fluid}
+          alt="Live at London Jazz Festival video"
+        />
+        {/* <Overlay>Flamenco Band</Overlay> */}
       </Parent>
       <Parent>
-        <VidImg>
-          <Img
-            fluid={birtImg.node.childImageSharp.fluid}
-            alt="Singer Katie Birtill video"
-          />
-        </VidImg>
-        <Overlay>Accompanist</Overlay>
+        <Img
+          fluid={birtImg.node.childImageSharp.fluid}
+          alt="Singer Katie Birtill video"
+        />
+        {/* <Overlay>Accompanist</Overlay> */}
       </Parent>
     </Grid>
   );

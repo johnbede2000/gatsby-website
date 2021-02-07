@@ -78,8 +78,7 @@ const Footer = () => {
           })}
         </ExternalLinks>
         <Copyright>
-          &copy; {year} John Cervantes &middot; Designed and Developed by{' '}
-          <a href="https://www.johnbe.de">John Bede</a> · All rights reserved
+          &copy; {year} John Cervantes &middot; All rights reserved
         </Copyright>
       </WidthContainer>
     </StripofColor>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import { FaYoutube } from 'react-icons/fa';
 
 // graphql query images for video gallery
 
@@ -63,16 +64,54 @@ const Youtube = ({ src, title }) => {
 const Grid = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: var(--vertical-gap);
   justify-content: space-between;
 `;
 
-const VidImg = styled(Img)`
+const Overlay = styled.div`
+  position: absolute;
+  top: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 18, 18, 0.4);
+  color: white;
+  text-align: center;
+`;
+
+const Parent = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
+const VidImg = styled.div`
   &:hover {
-    opacity: 0.4; // add hover: image moves or zooms within same frame size
+    opacity: 0.6;
   }
 `;
+
+const PlayBtn = () => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        fontSize: '75px',
+        zIndex: '2',
+      }}
+    >
+      <FaYoutube />
+    </div>
+  );
+};
+
+// hover blur effect or darken or zoom or translate3d
+// width: calc(100% + 50px);
+// max-width: calc(100% + 50px);
+// transition: opacity 0.35s, transform 0.35s;
+// transform: translate3d(-40px, 0, 0);
 
 // markdown
 
@@ -83,9 +122,35 @@ const Videos = () => {
   const birtImg = data.allFile.edges[0];
   return (
     <Grid>
-      <VidImg fluid={trioImg.node.childImageSharp.fluid}></VidImg>
-      <VidImg fluid={efgImg.node.childImageSharp.fluid}></VidImg>
-      <VidImg fluid={birtImg.node.childImageSharp.fluid}></VidImg>
+      {/* Make Parent into a imported component that receives fluid and alt */}
+      <Parent>
+        <PlayBtn />
+        <VidImg>
+          <Img
+            fluid={trioImg.node.childImageSharp.fluid}
+            alt="Jazz piano trio video"
+          />
+        </VidImg>
+        <Overlay>Piano Trio</Overlay>
+      </Parent>
+      <Parent>
+        <VidImg>
+          <Img
+            fluid={efgImg.node.childImageSharp.fluid}
+            alt="Live at London Jazz Festival video"
+          />
+        </VidImg>
+        <Overlay>Flamenco Band</Overlay>
+      </Parent>
+      <Parent>
+        <VidImg>
+          <Img
+            fluid={birtImg.node.childImageSharp.fluid}
+            alt="Singer Katie Birtill video"
+          />
+        </VidImg>
+        <Overlay>Accompanist</Overlay>
+      </Parent>
     </Grid>
   );
 };

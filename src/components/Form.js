@@ -53,19 +53,24 @@ const ContactForm = () => {
       {/* Me: Looks like end of hidden */}
 
       <div>
-        <label for="name">Name:</label>
-        <Input id="name" type="text" name="name" onChange={handleChange} />
-
-        <label for="email">Email:</label>
-        <Input id="email" type="email" name="email" onChange={handleChange} />
-        <label for="msg">Message:</label>
-        <Input
-          as="textarea"
-          name="message"
-          id="msg"
-          rows="5"
-          onChange={handleChange}
-        ></Input>
+        <label for="name">
+          Name:
+          <Input id="name" type="text" name="name" onChange={handleChange} />
+        </label>
+        <label for="email">
+          Email:
+          <Input id="email" type="email" name="email" onChange={handleChange} />
+        </label>
+        <label for="msg">
+          Message:
+          <Input
+            as="textarea"
+            name="message"
+            id="msg"
+            rows="5"
+            onChange={handleChange}
+          ></Input>
+        </label>
         <Button type="submit">Submit</Button>
       </div>
     </Form>

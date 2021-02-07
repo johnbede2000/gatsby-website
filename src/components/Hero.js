@@ -35,6 +35,7 @@ const Hero = () => {
           opacity: '0.3',
         }}
         imgStyle={{ objectPosition: 'right 30%' }}
+        alt="John Cervantes playing jazz piano"
       />
     </div>
   );

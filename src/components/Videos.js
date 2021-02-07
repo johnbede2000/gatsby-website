@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 
-// graphql
+// graphql query images for video gallery
 
 const query = graphql`
   {
     allFile(filter: { relativeDirectory: { eq: "video-img" } }) {
       edges {
         node {
-          base
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -28,19 +28,16 @@ const videoLinks = [
     id: 1,
     title: 'Piano Trio',
     src: 'https://www.youtube.com/embed/3fO_xDVrHZ8',
-    img: '',
   },
   {
     id: 2,
     title: 'Flamenco Band',
     src: 'https://www.youtube.com/embed/B0DkodC_PxM',
-    img: '',
   },
   {
     id: 3,
     title: 'Katie Birtill',
     src: 'https://www.youtube.com/embed/Y_HrP5Zu25M',
-    img: '',
   },
 ];
 
@@ -71,12 +68,26 @@ const Grid = styled.div`
   justify-content: space-between;
 `;
 
+const VidImg = styled(Img)`
+  &:hover {
+    opacity: 0.4; // add hover: image moves or zooms within same frame size
+  }
+`;
+
 // markdown
 
 const Videos = () => {
   const data = useStaticQuery(query);
-  console.log(data);
-  return <Grid>{/* clickable images here */}</Grid>;
+  const trioImg = data.allFile.edges[2]; // do separate queries because will it always return in the same order?
+  const efgImg = data.allFile.edges[1];
+  const birtImg = data.allFile.edges[0];
+  return (
+    <Grid>
+      <VidImg fluid={trioImg.node.childImageSharp.fluid}></VidImg>
+      <VidImg fluid={efgImg.node.childImageSharp.fluid}></VidImg>
+      <VidImg fluid={birtImg.node.childImageSharp.fluid}></VidImg>
+    </Grid>
+  );
 };
 
 export default Videos;

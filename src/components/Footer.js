@@ -74,7 +74,11 @@ const Footer = () => {
       <WidthContainer>
         <ExternalLinks>
           {extLinks.map((link) => {
-            return <Footerlink href={link.url}>{link.icon}</Footerlink>;
+            return (
+              <Footerlink key={link.id} href={link.url}>
+                {link.icon}
+              </Footerlink>
+            );
           })}
         </ExternalLinks>
         <Copyright>

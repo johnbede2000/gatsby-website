@@ -170,18 +170,24 @@ const Videos = () => {
         <Video
           alt="John Cervantes jazz piano trio"
           fluid={data.trio.childImageSharp.fluid}
-          onClick={() => openPlayer('3fO_xDVrHZ8', 'pic1title')}
+          onClick={() =>
+            openPlayer('3fO_xDVrHZ8', 'John Cervantes jazz piano trio')
+          }
         ></Video>
         <Video
           alt="Live at London Jazz Festival"
           fluid={data.flam.childImageSharp.fluid}
-          onClick={openPlayer}
+          onClick={() =>
+            openPlayer('B0DkodC_PxM', 'Live at EFG London Jazz Festival')
+          }
         ></Video>
 
         <Video
           alt="Accompanying a jazz singer"
           fluid={data.birt.childImageSharp.fluid}
-          onClick={openPlayer}
+          onClick={() =>
+            openPlayer('Y_HrP5Zu25M', 'Accompanying Katie Birtill')
+          }
         ></Video>
       </Grid>
     </>

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import Video from './Video';
 import { AiOutlineClose } from 'react-icons/ai';
+import { FaYoutube } from 'react-icons/fa';
+import Img from 'gatsby-image';
 
-// graphql query
+// GRAPHQL
 
 const query = graphql`
   {
@@ -34,6 +35,20 @@ const query = graphql`
 
 // styling
 
+const Parent = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px var(--raise-one);
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 5px 15px var(--raise-two);
+  }
+  &:hover img {
+    transform: scale(1.2);
+  }
+`;
+
 const Grid = styled.div`
   display: grid;
   width: 100%;
@@ -42,81 +57,131 @@ const Grid = styled.div`
   justify-content: space-between;
 `;
 
-const Fullscreen = styled.div`
+const VidContainer = styled.div`
   display: none;
   &.open {
-    z-index: 99;
+    z-index: 98;
     background-color: var(--raise-one);
     display: flex;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
+    bottom: 0;
     justify-content: flex-end;
-    font-size: 2rem;
     padding: var(--vertical-gap);
   }
 `;
 
-const Iframe = (src, title) => {
+const Closebtn = styled.button`
+  display: block;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+`;
+
+const PlayBtn = () => {
   return (
-    <iframe
-      width="100%"
-      height="315"
-      src={`https://www.youtube.com/embed/${src}`}
-      modestbranding="1"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      title={title}
-    />
+    <div
+      style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '75px',
+      }}
+    >
+      <FaYoutube style={{ zIndex: '1' }} />
+    </div>
   );
 };
 
-// markdown
+// state
 
 const Videos = () => {
   const data = useStaticQuery(query);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [url, setURL] = React.useState('');
-  const [title, setTitle] = React.useState('');
+  const [currSrc, setCurrSrc] = React.useState('new source!');
+  const [currTitle, setCurrTitle] = React.useState('new title!');
 
-  const openPlayer = () => {
+  const openPlayer = (newSrc, newTitle) => {
     setIsOpen(true);
-    // setURL(e.target.url);
-    // setTitle(title);
+    setCurrSrc(newSrc);
+    setCurrTitle(newTitle);
   };
 
   const closePlayer = () => {
     setIsOpen(false);
   };
 
+  const Video = ({ fluid, alt, onClick }) => {
+    return (
+      <Parent onClick={onClick}>
+        <PlayBtn />
+        <Img
+          fluid={fluid}
+          alt={alt}
+          imgStyle={{ transition: 'transform .5s ease' }}
+        />
+      </Parent>
+    );
+  };
+
+  const Iframe = (props) => {
+    return (
+      <iframe
+        width="100%"
+        height="315"
+        src={`https://www.youtube.com/embed/${props.src}`}
+        modestbranding="1"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title={props.title}
+      />
+    );
+  };
+
+  // markup
+
   return (
     <>
-      <Fullscreen className={isOpen ? 'open' : null}>
-        <AiOutlineClose onClick={closePlayer} />
-        {/* <Iframe /> */}
-      </Fullscreen>
+      <VidContainer className={isOpen ? 'open' : null}>
+        <Closebtn onClick={closePlayer}>
+          <AiOutlineClose />
+        </Closebtn>{' '}
+        <Iframe src={currSrc} title={currTitle} />
+      </VidContainer>
       <Grid>
         <Video
+          alt="John Cervantes jazz piano trio"
           fluid={data.trio.childImageSharp.fluid}
-          url="www.google.com"
-          title="testing"
-          onClick={() => setIsOpen(true)}
+          onClick={() => openPlayer('3fO_xDVrHZ8', 'pic1title')}
         ></Video>
         <Video
+          alt="Live at London Jazz Festival"
           fluid={data.flam.childImageSharp.fluid}
           onClick={openPlayer}
-          url="www.google.com"
-          title="testing"
         ></Video>
 
         <Video
+          alt="Accompanying a jazz singer"
           fluid={data.birt.childImageSharp.fluid}
           onClick={openPlayer}
-          url="www.google.com"
-          title="testing"
         ></Video>
       </Grid>
     </>

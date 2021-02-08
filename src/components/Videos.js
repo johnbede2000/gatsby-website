@@ -45,29 +45,32 @@ const Grid = styled.div`
 const Fullscreen = styled.div`
   display: none;
   &.open {
+    z-index: 99;
     background-color: var(--raise-one);
+    display: flex;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     width: 100%;
+    justify-content: flex-end;
+    font-size: 2rem;
+    padding: var(--vertical-gap);
   }
 `;
 
-const Vidplayer = ({ src, title }) => {
+const Iframe = (src, title) => {
   return (
-    <Fullscreen>
-      <iframe
-        width="100%"
-        height="315"
-        src={src}
-        modestbranding="1"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        title={title}
-      ></iframe>
-    </Fullscreen>
+    <iframe
+      width="100%"
+      height="315"
+      src={`https://www.youtube.com/embed/${src}`}
+      modestbranding="1"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      title={title}
+    />
   );
 };
 
@@ -76,31 +79,44 @@ const Vidplayer = ({ src, title }) => {
 const Videos = () => {
   const data = useStaticQuery(query);
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const [url, setURL] = React.useState('');
+  const [title, setTitle] = React.useState('');
+
+  const openPlayer = () => {
+    setIsOpen(true);
+    // setURL(e.target.url);
+    // setTitle(title);
   };
+
+  const closePlayer = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
-      <Vidplayer className={isOpen ? 'open' : null}></Vidplayer>
+      <Fullscreen className={isOpen ? 'open' : null}>
+        <AiOutlineClose onClick={closePlayer} />
+        {/* <Iframe /> */}
+      </Fullscreen>
       <Grid>
         <Video
           fluid={data.trio.childImageSharp.fluid}
-          url="https://www.youtube.com/embed/B0DkodC_PxM"
-          alt="Jazz piano trio video"
-          onClick={toggleMenu}
+          url="www.google.com"
+          title="testing"
+          onClick={() => setIsOpen(true)}
         ></Video>
         <Video
           fluid={data.flam.childImageSharp.fluid}
-          url="https://www.youtube.com/embed/B0DkodC_PxM"
-          alt="Live at London Jazz Festival video"
-          onClick={toggleMenu}
+          onClick={openPlayer}
+          url="www.google.com"
+          title="testing"
         ></Video>
 
         <Video
           fluid={data.birt.childImageSharp.fluid}
-          url="https://www.youtube.com/embed/B0DkodC_PxM"
-          alt="Accompanying jazz singer video"
-          onClick={toggleMenu}
+          onClick={openPlayer}
+          url="www.google.com"
+          title="testing"
         ></Video>
       </Grid>
     </>

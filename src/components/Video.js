@@ -14,7 +14,7 @@ const Parent = styled.div`
     box-shadow: 0 5px 15px var(--raise-two);
   }
   &:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 `;
 
@@ -42,9 +42,9 @@ const PlayBtn = () => {
 
 // component
 
-const Video = ({ url, fluid, alt }) => {
+const Video = ({ url, fluid, alt, onClick }) => {
   return (
-    <Parent url={url}>
+    <Parent url={url} onClick={onClick}>
       <PlayBtn />
       <Img
         fluid={fluid}

@@ -3,17 +3,17 @@ import { WidthContainer, Button } from '../css/globalstyles';
 import React from 'react';
 import Amplitude from 'amplitudejs';
 
-Amplitude.init({
-  songs: [
-    {
-      name: "Can't Help Lovin",
-      artist: 'Stella & The Old Fashioneds',
-      album: 'Live Dec 2020',
-      url: 'https://soundcloud.com/johncervantes/cant-help-lovin',
-      cover_art_url: '/src/imgages/landscape-trio.jpg',
-    },
-  ],
-});
+// Amplitude.init({
+//   songs: [
+//     {
+//       name: "Can't Help Lovin",
+//       artist: 'Stella & The Old Fashioneds',
+//       album: 'Live Dec 2020',
+//       url: 'https://soundcloud.com/johncervantes/cant-help-lovin',
+//       cover_art_url: '/src/imgages/landscape-trio.jpg',
+//     },
+//   ],
+// });
 
 // style
 

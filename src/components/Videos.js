@@ -61,16 +61,26 @@ const VidContainer = styled.div`
   display: none;
   &.open {
     z-index: 98;
-    background-color: var(--raise-one);
+    background-color: black;
     display: flex;
-    position: absolute;
+    flex-direction: column;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     bottom: 0;
-    justify-content: flex-end;
-    padding: var(--vertical-gap);
+    width: 100%;
+    padding: 0 5vw;
+    justify-content: center;
+    align-items: center;
   }
+`;
+
+const BtnDiv = styled.div`
+  width: 100%;
+  max-width: 560px;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Closebtn = styled.button`
@@ -79,8 +89,6 @@ const Closebtn = styled.button`
   background: none;
   font-size: 2rem;
   color: var(--text-light);
-  display: flex;
-  align-items: center;
   z-index: 99;
 
   &:hover {
@@ -144,7 +152,6 @@ const Videos = () => {
   const Iframe = (props) => {
     return (
       <iframe
-        width="100%"
         height="315"
         src={`https://www.youtube.com/embed/${props.src}`}
         modestbranding="1"
@@ -152,6 +159,7 @@ const Videos = () => {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         title={props.title}
+        style={{ maxWidth: '560px', width: '100%' }}
       />
     );
   };
@@ -161,9 +169,11 @@ const Videos = () => {
   return (
     <>
       <VidContainer className={isOpen ? 'open' : null}>
-        <Closebtn onClick={closePlayer}>
-          <AiOutlineClose />
-        </Closebtn>{' '}
+        <BtnDiv>
+          <Closebtn onClick={closePlayer}>
+            <AiOutlineClose />
+          </Closebtn>
+        </BtnDiv>
         <Iframe src={currSrc} title={currTitle} />
       </VidContainer>
       <Grid>

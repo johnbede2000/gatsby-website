@@ -37,7 +37,7 @@ const ToggleButton = styled.button`
   color: var(--text-light);
   display: flex;
   align-items: center;
-  z-index: 99;
+  z-index: 97;
 
   &:hover {
     color: white;
@@ -78,7 +78,7 @@ const Ul = styled.ul`
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 98;
+    z-index: 96;
     justify-content: center;
     align-items: center;
   }
@@ -88,7 +88,7 @@ const Ul = styled.ul`
     flex-direction: row;
     height: var(--mobnav-height);
     width: 100%;
-    z-index: 98;
+    z-index: 96;
     justify-content: space-between;
     align-items: center;
   }

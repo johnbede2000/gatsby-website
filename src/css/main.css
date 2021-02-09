@@ -69,15 +69,6 @@ a:hover {
   margin: 0 auto;
 } */
 
-.text {
-  column-gap: 2em;
-  column-width: 24em;
-}
-
-.text > p:not(:first-child) {
-  margin-top: var(--vertical-gap);
-}
-
 .screen-cover {
   position: absolute; /*no positioned ancestors, so relative to the document body, and moves along with page scrolling (background only fills one screen, moves up when you scroll down)*/
   top: var(--topnav-height);
@@ -245,20 +236,6 @@ main {
 .stack {
   margin-bottom: var(--vertical-gap);
   width: 100%;
-}
-
-.float-img {
-  float: right;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  width: 50%;
-}
-
-@media screen and (max-width: 767px) {
-  .float-img {
-    float: none;
-    width: 100%;
-  }
 }
 
 :target {

@@ -13,7 +13,7 @@ export const Button = styled.a`
   border: 1px solid white;
   text-transform: uppercase;
   text-align: center;
-  padding: 13px 10px;
+  padding: 10px 10px;
   display: block;
   width: 100%;
   max-width: 220px;

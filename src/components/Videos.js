@@ -153,7 +153,7 @@ const Videos = () => {
     return (
       <iframe
         height="315"
-        src={`https://www.youtube.com/embed/${props.src}`}
+        src={`https://www.youtube.com/embed/${props.src}?autoplay=1`}
         modestbranding="1"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

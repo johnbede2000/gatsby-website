@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Form = styled.div`
+const Form = styled.form`
   max-width: 35rem;
   background-color: var(--raise-one);
   padding: var(--vertical-gap) 1rem;

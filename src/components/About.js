@@ -28,7 +28,7 @@ const Flex = styled.div`
   }
 `;
 
-const Aboutpara = styled.p`
+const Aboutpara = styled.div`
   max-width: 680px; // update value
 `;
 
@@ -80,7 +80,6 @@ const Bio = styled(Aboutpara)`
 
 const About = () => {
   const data = useStaticQuery(query);
-  console.log(data);
   return (
     <Flex>
       <div>
@@ -91,7 +90,7 @@ const About = () => {
               alt="Portrait photo of John Cervantes"
             />
           </AboutImg>
-          {blurb}
+          <p>{blurb}</p>
         </Aboutpara>
         {bio.map((para) => {
           return <Bio key={para.id}>{para.para}</Bio>;

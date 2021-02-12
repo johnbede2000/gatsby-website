@@ -123,8 +123,8 @@ const PlayBtn = () => {
 const Videos = () => {
   const data = useStaticQuery(query);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [currSrc, setCurrSrc] = React.useState('new source!');
-  const [currTitle, setCurrTitle] = React.useState('new title!');
+  const [currSrc, setCurrSrc] = React.useState(null);
+  const [currTitle, setCurrTitle] = React.useState(null);
 
   const openPlayer = (newSrc, newTitle) => {
     setIsOpen(true);
@@ -134,6 +134,8 @@ const Videos = () => {
 
   const closePlayer = () => {
     setIsOpen(false);
+    setCurrSrc(null);
+    setCurrTitle(null);
   };
 
   const Video = ({ fluid, alt, onClick }) => {

@@ -157,9 +157,9 @@ const Videos = () => {
         height="315"
         src={`https://www.youtube.com/embed/${props.src}?autoplay=1`}
         modestbranding="1"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
         title={props.title}
         style={{ maxWidth: '560px', width: '100%' }}
       />

@@ -59,7 +59,13 @@ const ContactForm = () => {
         </label>
         <label htmlFor="email">
           Email:
-          <Input id="email" type="email" name="email" onChange={handleChange} />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            required
+            onChange={handleChange}
+          />
         </label>
         <label htmlFor="msg">
           Message:

@@ -18,10 +18,14 @@ module.exports = {
       __key: 'images',
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: 'gatsby-plugin-webfonts',
       options: {
-        google: {
-          families: ['Poppins', 'Jura', 'Bebas Neue'],
+        fonts: {
+          google: [
+            { family: 'Poppins', variants: ['400', '700'] },
+            { family: 'Jura', variants: ['400', '700'] },
+            { family: 'Bebas Neue', variants: ['400', '700'] },
+          ],
         },
       },
     },

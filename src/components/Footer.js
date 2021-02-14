@@ -46,6 +46,7 @@ const StripofColor = styled.div`
   padding-bottom: var(--vertical-gap);
   flex-grow: 0;
   flex-shrink: 0;
+  height: 8rem;
 `;
 
 const ExternalLinks = styled.div`

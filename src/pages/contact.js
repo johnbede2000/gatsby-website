@@ -6,7 +6,7 @@ import { Center } from '../css/globalstyles';
 export default function Contact() {
   return (
     <Layout curr="Contact">
-      <Center>
+      <Center style={{ minHeight: 'calc(100vh - 17rem)' }}>
         <Form />
       </Center>
     </Layout>

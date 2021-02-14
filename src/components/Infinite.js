@@ -29,7 +29,7 @@ const Infinite = () => {
     allContentfulNews: { nodes: news },
   } = data;
   return (
-    <div>
+    <div style={{ maxWidth: '600px' }}>
       {news.map((item) => {
         return <Newsitem key={item.id} {...item}></Newsitem>;
       })}

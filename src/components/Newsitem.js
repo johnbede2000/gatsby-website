@@ -20,11 +20,15 @@ const Text = styled.div`
   padding: 1rem;
 `;
 
+const Date = styled.p`
+  margin-right: 0.75rem;
+`;
+
 const Newsitem = (item) => {
   return (
     <Item>
       <DateLoc>
-        <p>{item.date}</p>
+        <Date>{item.date}</Date>
         <p>
           <FaMapMarkerAlt /> {item.location}
         </p>

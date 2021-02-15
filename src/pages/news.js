@@ -2,21 +2,23 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Infinite from '../components/Infinite';
 import styled from 'styled-components';
+import NewsAbout from '../components/NewsAbout';
 
 const TwoColumns = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 `;
 
 const news = () => {
   return (
     <Layout curr="news">
       <TwoColumns>
-        <div>
-          <p>Put something else here!</p>
-        </div>
+        <NewsAbout />
         <Infinite />
       </TwoColumns>
     </Layout>

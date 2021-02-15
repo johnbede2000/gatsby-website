@@ -33,6 +33,11 @@ const Infinite = () => {
     & > *:not(:first-child) {
       margin-top: var(--vertical-gap);
     }
+
+    @media screen and (min-width: 768px) {
+      width: 500px;
+      flex-shrink: 0;
+    }
   `;
 
   const {

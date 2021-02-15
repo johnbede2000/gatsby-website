@@ -1,5 +1,10 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaInfoCircle,
+  FaUser,
+  FaThumbsUp,
+} from 'react-icons/fa';
 import { AiFillMessage } from 'react-icons/ai';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -7,23 +12,25 @@ import { Link } from 'gatsby';
 // data
 
 const data = [
+  { id: 1, icon: <FaUser />, text: 'John Cervantes' },
   {
-    id: 1,
+    id: 2,
     icon: <FaMapMarkerAlt />,
     text: 'London, UK',
   },
+
   {
-    id: 2,
+    id: 3,
     icon: <FaInfoCircle />,
     text: 'Jazz pianist, bandleader & composer',
   },
   {
-    id: 3,
-    icon: <FaInfoCircle />,
+    id: 4,
+    icon: <FaThumbsUp />,
     text: 'Left social media January 2021',
   },
   {
-    id: 4,
+    id: 5,
     icon: <AiFillMessage />,
     text: <Link to="/contact/">Send a message</Link>,
   },
@@ -32,16 +39,15 @@ const data = [
 // styling
 
 const NewsCard = styled.div`
-  background-color: var(--raise-two);
-  border-radius: 10px;
-  margin-bottom: var(--vertical-gap);
-  flex-grow: 1;
-  padding: 1rem;
-  max-width: 500px;
+  display: none;
   @media screen and (min-width: 768px) {
+    display: block;
+    background-color: var(--raise-two);
+    border-radius: 10px;
+    flex-grow: 1;
+    padding: 1rem;
     min-height: 30vh;
     margin-right: var(--vertical-gap);
-    max-width: 1170px;
   }
 `;
 

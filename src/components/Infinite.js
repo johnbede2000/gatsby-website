@@ -29,6 +29,10 @@ const Infinite = () => {
 
   const Stream = styled.div`
     max-width: 500px;
+
+    & > *:not(:first-child) {
+      margin-top: var(--vertical-gap);
+    }
   `;
 
   const {

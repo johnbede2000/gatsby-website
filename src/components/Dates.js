@@ -9,7 +9,7 @@ const dummydata = [
     venue: 'Royal Albert Hall',
     city: 'London, UK',
     band: 'Quintet',
-    link: 'www.google.com',
+    link: 'https://www.johncervantes.co.uk',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const dummydata = [
     venue: 'Carnegie Hall',
     city: 'New York, USA',
     band: 'Trio',
-    link: 'www.youtube.com',
+    link: 'https://www.johncervantes.co.uk',
   },
 ];
 
@@ -33,27 +33,45 @@ const Row = styled.div`
   &:first-of-type {
     margin-top: 0;
   }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Date = styled.span`
   font-weight: bold;
   display: inline-block;
+  flex-basis: 15%;
+  padding-right: 1rem;
 `;
 
 const Band = styled.span`
-  display: inline-block;
+  display: none;
+  flex-basis: 15%;
+  padding-right: 1rem;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
 `;
 
 const Venue = styled.span`
   display: inline-block;
+  flex-basis: 25%;
+  padding-right: 1rem;
 `;
 
 const City = styled.span`
-  display: inline-block;
+  display: none;
+  flex-basis: 20%;
+  padding-right: 1rem;
+  @media screen and (min-width: 400px) {
+    display: inline-block;
+  }
 `;
 
 const Tickets = styled(Button)`
-  width: auto;
+  flex-basis: 15%;
+  display: inline-block;
 `;
 
 const Dates = () => {

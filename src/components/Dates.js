@@ -6,9 +6,9 @@ const dummydata = [
   {
     id: 1,
     date: '25 Feb 2050',
-    venue: 'Royal Albert Hall',
-    city: 'London, UK',
-    band: 'Quintet',
+    venue: 'RoyalAlbert HallLong Title',
+    city: 'Timbukata, UK',
+    band: 'Jimmy Jazz Orchestra',
     link: 'https://www.johncervantes.co.uk',
   },
   {
@@ -33,45 +33,62 @@ const Row = styled.div`
   &:first-of-type {
     margin-top: 0;
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const Date = styled.span`
   font-weight: bold;
+  overflow-wrap: break-word;
   display: inline-block;
-  flex-basis: 15%;
+  width: 25%;
   padding-right: 1rem;
+  @media screen and (min-width: 700px) {
+    width: 15%;
+  }
 `;
 
 const Band = styled.span`
   display: none;
-  flex-basis: 15%;
-  padding-right: 1rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: inline-block;
+    overflow-wrap: break-word;
+    width: 22%;
+    padding-right: 1rem;
   }
 `;
 
 const Venue = styled.span`
   display: inline-block;
-  flex-basis: 25%;
+  overflow-wrap: break-word;
+  width: 42%;
   padding-right: 1rem;
+  @media screen and (min-width: 700px) {
+    width: 35%;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 23%;
+  }
 `;
 
 const City = styled.span`
   display: none;
-  flex-basis: 20%;
-  padding-right: 1rem;
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 700px) {
     display: inline-block;
+    overflow-wrap: break-word;
+    width: 30%;
+    padding-right: 1rem;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 20%;
   }
 `;
 
 const Tickets = styled(Button)`
-  flex-basis: 15%;
+  width: 33%;
+  overflow-wrap: break-word;
   display: inline-block;
+  @media screen and (min-width: 700px) {
+    width: 20%;
+  }
 `;
 
 const Dates = () => {

@@ -21,8 +21,6 @@ const dummydata = [
   },
 ];
 
-const Table = styled.div``;
-
 const Row = styled.div`
   padding-bottom: 1em;
   border-bottom: solid 1px var(--text-light);
@@ -98,7 +96,7 @@ const Tickets = styled(Button)`
 
 const Dates = () => {
   return (
-    <Table>
+    <div>
       {dummydata.map((row) => {
         return (
           <Row key={row.id}>
@@ -110,7 +108,7 @@ const Dates = () => {
           </Row>
         );
       })}
-    </Table>
+    </div>
   );
 };
 

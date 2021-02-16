@@ -22,12 +22,13 @@ const data = [
   {
     id: 3,
     icon: <FaInfoCircle />,
-    text: 'Jazz pianist, bandleader & composer',
+    text: 'Musician',
   },
   {
     id: 4,
     icon: <FaThumbsUp />,
-    text: 'Left social media January 2021',
+    text:
+      'Likes playing the piano, composing, arranging, transcribing, and occasionally playing the trumpet.',
   },
   {
     id: 5,

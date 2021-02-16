@@ -70,6 +70,7 @@ const Tickets = styled(Button)`
   vertical-align: middle;
   overflow-wrap: break-word;
   display: inline-block;
+  max-width: 1170px;
   @media screen and (min-width: 700px) {
     width: 20%;
   }

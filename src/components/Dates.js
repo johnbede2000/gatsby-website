@@ -37,6 +37,7 @@ const Row = styled.div`
 
 const Date = styled.span`
   font-weight: bold;
+  vertical-align: middle;
   overflow-wrap: break-word;
   display: inline-block;
   width: 25%;
@@ -50,6 +51,7 @@ const Band = styled.span`
   display: none;
   @media screen and (min-width: 1024px) {
     display: inline-block;
+    vertical-align: middle;
     overflow-wrap: break-word;
     width: 22%;
     padding-right: 1rem;
@@ -58,6 +60,7 @@ const Band = styled.span`
 
 const Venue = styled.span`
   display: inline-block;
+  vertical-align: middle;
   overflow-wrap: break-word;
   width: 42%;
   padding-right: 1rem;
@@ -73,6 +76,7 @@ const City = styled.span`
   display: none;
   @media screen and (min-width: 700px) {
     display: inline-block;
+    vertical-align: middle;
     overflow-wrap: break-word;
     width: 30%;
     padding-right: 1rem;
@@ -84,6 +88,7 @@ const City = styled.span`
 
 const Tickets = styled(Button)`
   width: 33%;
+  vertical-align: middle;
   overflow-wrap: break-word;
   display: inline-block;
   @media screen and (min-width: 700px) {

@@ -1,1 +1,1 @@
-Website built with [Gatsby](https://www.gatsbyjs.com/) and [Styled Components](https://styled-components.com/)
+Website built with [Gatsby](https://www.gatsbyjs.com/) and [Styled Components](https://styled-components.com/). The news feed queries content from [Contentful](https://www.contentful.com/) (headless CMS).

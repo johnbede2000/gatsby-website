@@ -50,6 +50,13 @@ a:hover {
   --vertical-gap: 2rem;
 }
 
+blockquote {
+  background: var(--raise-two);
+  border-left: 10px solid #ccc;
+  margin: 1em 0;
+  padding: 0 10px;
+}
+
 /* @media screen and (min-width: 36em) {
   :root {
     --topnav-height: 6em;

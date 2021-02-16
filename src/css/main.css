@@ -27,7 +27,6 @@ body {
 
 main {
   margin-top: var(--topnav-height);
-  /* flex-grow: 1; */
 }
 
 img {
@@ -46,12 +45,10 @@ a:hover {
 }
 
 :root {
-  /* --side-padding: 15px; */
   --mobnav-height: 5em;
   --text-light: rgba(255, 255, 255, 0.7);
   --raise-one: #222222;
   --raise-two: #2e2e2e;
-  /* --menu-breakpoint: 768px; */
   --vertical-gap: 2rem;
 }
 
@@ -63,33 +60,12 @@ blockquote {
 }
 
 footer {
-  /* flex-grow: 0;
-  flex-shrink: 0;
-  background-color: var(--raise-one);
-  padding: 1rem 0; */
   font-size: 1.25rem;
   text-align: center;
   width: 100%;
 }
 
-/* @media screen and (min-width: 36em) {
-  :root {
-    --topnav-height: 6em;
-  }
-} */
-
-/* .max-width-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-} */
-/* .width-container {
-  max-width: 1170px;
-  width: 90vw;
-  margin: 0 auto;
-} */
+/* OLD CLASSES AND SELECTORS FROM HTML SITE, I WILL DELETE THESE */
 
 .screen-cover {
   position: absolute; /*no positioned ancestors, so relative to the document body, and moves along with page scrolling (background only fills one screen, moves up when you scroll down)*/
@@ -108,48 +84,10 @@ footer {
   width: 100%;
 }
 
-/* #nav-list {
-refactor mobile first
-display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-} */
-
-/* #nav-list li {
-  display: block;
-} */
-
-/* #nav-list a {
-  font-size: 2rem;
-  font-family: 'Bebas Neue', sans-serif;
-  background-image: linear-gradient(white, white);
-  background-size: 0 5px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  transition: all 0.2s ease-out;
-} */
-
-/* nav a:hover {
-  background-size: 100% 5px;
-} */
-
 #nav-list #hamburger a:hover,
 #nav-list a#current-page:hover {
   background-size: 0 5px;
 }
-
-/* #nav-list #current-page {
-  color: white;
-} */
 
 #nav-list #hamburger {
   display: none;
@@ -307,17 +245,12 @@ display: flex;
   border-radius: 2px;
 }
 
-/* #email {
-  width: 288px;
-} */
-
 .btn {
   background-color: var(--raise-two);
   font-family: 'Jura', sans-serif;
   color: white;
   border: white solid 1px;
   padding: 0.75em 4em;
-  /* width: 180px; */
 }
 
 .btn:hover {

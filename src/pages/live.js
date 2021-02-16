@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Dates from '../components/Dates';
 
 const live = () => {
   return (
     <Layout curr="live">
-      {/* add if no shows it displays the following text */}
-      <p>There are currently no upcoming dates. Check back soon!</p>
+      {/* add conditional - if no shows then display text */}
+      <Dates />
     </Layout>
   );
 };

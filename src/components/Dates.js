@@ -1,25 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../css/globalstyles';
-
-const dummydata = [
-  {
-    id: 1,
-    date: '25 Feb 2050',
-    venue: 'RoyalAlbert HallLong Title',
-    city: 'Timbukata, UK',
-    band: 'Jimmy Jazz Orchestra',
-    link: 'https://www.johncervantes.co.uk',
-  },
-  {
-    id: 2,
-    date: '26 Feb 2050',
-    venue: 'Carnegie Hall',
-    city: 'New York, USA',
-    band: 'Trio',
-    link: 'https://www.johncervantes.co.uk',
-  },
-];
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Row = styled.div`
   padding-bottom: 1em;
@@ -34,7 +16,6 @@ const Row = styled.div`
 `;
 
 const Date = styled.span`
-  font-weight: bold;
   vertical-align: middle;
   overflow-wrap: break-word;
   display: inline-block;
@@ -51,7 +32,7 @@ const Band = styled.span`
     display: inline-block;
     vertical-align: middle;
     overflow-wrap: break-word;
-    width: 22%;
+    width: 20%;
     padding-right: 1rem;
   }
 `;
@@ -66,7 +47,7 @@ const Venue = styled.span`
     width: 35%;
   }
   @media screen and (min-width: 1024px) {
-    width: 23%;
+    width: 25%;
   }
 `;
 
@@ -95,13 +76,28 @@ const Tickets = styled(Button)`
 `;
 
 const Dates = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulGigs(sort: { fields: date, order: ASC }) {
+        nodes {
+          city
+          id
+          date(formatString: "DD MMM YYYY")
+          venue
+          bandname
+          link
+        }
+      }
+    }
+  `);
+  const allgigs = data.allContentfulGigs.nodes;
   return (
     <div>
-      {dummydata.map((row) => {
+      {allgigs.map((row) => {
         return (
           <Row key={row.id}>
             <Date>{row.date}</Date>
-            <Band>{row.band}</Band>
+            <Band>{row.bandname}</Band>
             <Venue>{row.venue}</Venue>
             <City>{row.city}</City>
             <Tickets href={row.link}>Tickets</Tickets>

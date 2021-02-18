@@ -17,7 +17,9 @@ const YTbutton = () => {
   return (
     <Div>
       <H4>Watch more:</H4>
-      <Button href="https://www.youtube.com/johncervanteskeys">Youtube</Button>
+      <Button href="https://www.youtube.com/c/JohnCervantesProfile/videos">
+        Youtube
+      </Button>
     </Div>
   );
 };

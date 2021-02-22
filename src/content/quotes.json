@@ -4,7 +4,7 @@
     "source": "London Jazz News",
     "img": "../images/quotes/ljn.png",
     "extension": "png",
-    "text": "“[John Cervantes] plays beautifully and lyrically…​ The enthusiastic audience would not let the band leave without an encore, they knew they had seen something special.”"
+    "text": "He plays beautifully and lyrically... The enthusiastic audience would not let the band leave without an encore, they knew they had seen something special."
   },
   {
     "id": 2,
@@ -18,14 +18,14 @@
     "source": "Jazzwise Magazine",
     "img": "../images/quotes/jazzwise.jpg",
     "extension": "jpg",
-    "text": "Fusion was not forsaken; Current Affairs dissected the more exploratory side of the genre"
+    "text": "Fusion was not forsaken; the band dissected the more exploratory side of the genre"
   },
   {
     "id": 4,
     "source": "Jazz FM",
     "img": "../images/quotes/jazzfm.png",
     "extension": "png",
-    "text": "A very exciting concert of brand new music...A line-up including the cream of London-based young jazz talent."
+    "text": "A very exciting concert of brand new music... A line-up including the cream of London-based young jazz talent."
   },
 
   {
@@ -33,6 +33,6 @@
     "source": "Cabaret Scenes: The Magazine of the American Songbook Association",
     "img": "../images/quotes/asa.jpg",
     "extension": "jpg",
-    "text": "The artist was superbly supported... If I Were A Bell was delivered with a piano to die for"
+    "text": "The singer was superbly supported... If I Were A Bell was delivered with a piano to die for"
   }
 ]

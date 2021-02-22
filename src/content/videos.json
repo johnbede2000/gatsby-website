@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "John Cervantes jazz piano trio",
+    "youtube": "3fO_xDVrHZ8",
+    "img": "../images/video-img/triosq.png",
+    "extension": "png"
+  },
+  {
+    "id": 2,
+    "title": "Live at EFG London Jazz Festival",
+    "youtube": "B0DkodC_PxM",
+    "img": "../images/video-img/flamsq.jpg",
+    "extension": "jpg"
+  },
+  {
+    "id": 3,
+    "title": "Accompanying a jazz singer",
+    "youtube": "Y_HrP5Zu25M",
+    "img": "../images/video-img/kBirtSQ.png",
+    "extension": "png"
+  }
+]

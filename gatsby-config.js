@@ -8,27 +8,35 @@ module.exports = {
     siteURL: 'https://wwww.johncervantes.co.uk',
   },
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    // 'gatsby-plugin-sitemap',
-    'gatsby-transformer-sharp',
+    // `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
-        path: './src/images/',
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
-      __key: 'images',
+      __key: `images`,
     },
     {
-      resolve: 'gatsby-plugin-webfonts',
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
           google: [
-            { family: 'Poppins', variants: ['400', '700'] },
-            { family: 'Jura', variants: ['400', '700'] },
-            { family: 'Bebas Neue', variants: ['400', '700'] },
+            { family: `Poppins`, variants: [`400`, `700`] },
+            { family: `Jura`, variants: [`400`, `700`] },
+            { family: `Bebas Neue`, variants: [`400`, `700`] },
           ],
         },
       },

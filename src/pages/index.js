@@ -14,7 +14,7 @@ const MinHeight = styled.div`
 
 // data
 
-// markup
+// markup - N.B. not currently using Layout component used on every other page
 const IndexPage = () => {
   return (
     <>

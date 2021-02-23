@@ -5,24 +5,27 @@ const Quotes = () => {
   const data = useStaticQuery(graphql`
     {
       allQuotesJson {
-        edges {
-          node {
-            id
-            img {
-              childImageSharp {
-                fixed(width: 130) {
-                  ...GatsbyImageSharpFixed
-                }
+        nodes {
+          id
+          source
+          text
+          img {
+            childImageSharp {
+              fixed(width: 100) {
+                ...GatsbyImageSharpFixed
               }
             }
-            source
-            text
           }
         }
       }
     }
   `);
   const quotes = data.allQuotesJson.edges;
+  return (
+    <>
+      <p>hello world</p>
+    </>
+  );
 };
 
 export default Quotes;

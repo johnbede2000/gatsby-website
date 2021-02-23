@@ -10,13 +10,13 @@
     "id": 2,
     "source": "Belfast Telegraph",
     "text": "Unmissable",
-    "img": "../images/quotes/belfast.png",
-    "extension": "png"
+    "img": "../images/quotes/beltel.jpg",
+    "extension": "jpg"
   },
   {
     "id": 3,
     "source": "Jazzwise Magazine",
-    "img": "../images/quotes/jazzwise.jpg",
+    "img": "../images/quotes/jw-logo.jpg",
     "extension": "jpg",
     "text": "Fusion was not forsaken; the band dissected the more exploratory side of the genre"
   },
@@ -30,7 +30,7 @@
 
   {
     "id": 5,
-    "source": "Cabaret Scenes: The Magazine of the American Songbook Association",
+    "source": "The Magazine of the American Songbook Association",
     "img": "../images/quotes/asa.jpg",
     "extension": "jpg",
     "text": "The singer was superbly supported... If I Were A Bell was delivered with a piano to die for"

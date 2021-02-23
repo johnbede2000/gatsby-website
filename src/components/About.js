@@ -62,22 +62,6 @@ const Bio = styled(Aboutpara)`
   margin-top: var(--vertical-gap);
 `;
 
-// I want text to wrap naturally and responsively around image, so float works. but then if the text below gets too wide to have columns.
-
-// .float-img {
-//   float: left;
-//   padding-left: 10px;
-//   padding-bottom: 10px;
-//   width: 50%;
-// }
-
-// @media screen and (max-width: 767px) {
-//   .float-img {
-//     float: none;
-//     width: 100%;
-//   }
-// }
-
 const About = () => {
   const data = useStaticQuery(query);
   return (

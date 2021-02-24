@@ -1,12 +1,12 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Section, OneQuote, Text, Image, Source } from './Quotesstyle';
-import SwiperCore, { Pagination } from 'swiper';
+import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Autoplay]);
 
 // data
 const query = graphql`
@@ -37,8 +37,25 @@ const Quotes = () => {
   return (
     <Section>
       <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        grabCursor={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          960: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
         }}
       >
         {quotes.map((quote) => {

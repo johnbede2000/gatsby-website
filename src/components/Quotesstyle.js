@@ -5,6 +5,13 @@ const Section = styled.section`
   margin-top: var(--vertical-gap);
   width: 100%;
   text-align: center;
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.25;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
 `;
 
 const OneQuote = styled.div`

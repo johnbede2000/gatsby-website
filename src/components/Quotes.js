@@ -4,7 +4,7 @@ import { Section, OneQuote, Text, Image, Source } from './Quotesstyle';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
+require('swiper/components/pagination/pagination.scss');
 
 SwiperCore.use([Pagination, Autoplay]);
 

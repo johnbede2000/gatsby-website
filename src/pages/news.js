@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Infinite from '../components/Infinite';
 import styled from 'styled-components';
 import NewsAbout from '../components/NewsAbout';
+import SEO from '../components/Seo';
 
 const TwoColumns = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const TwoColumns = styled.div`
 const news = () => {
   return (
     <Layout curr="news">
+      <SEO title="News" />
       <TwoColumns>
         <NewsAbout />
         <Infinite />

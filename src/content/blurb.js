@@ -5,7 +5,7 @@ const bio = [
   {
     id: 2,
     para:
-      "John grew up in Leicester, and began listening to 'acid jazz' as a teenager. Whilst investigating the roots of acid jazz he discovered the name Herbie Hancock... which opened the door to exploring the wider history of jazz. In these pre-Spotify (et al.) days he followed the trail by reading jazz history books and connecting the dots album to album, one at a time.",
+      "John grew up in Leicester, and began listening to 'acid jazz' as a teenager. Whilst investigating the roots of acid jazz he discovered the name Herbie Hancock... which opened the door to exploring the wider history of jazz. He followed the trail by reading jazz history books and connecting the dots album to album, one at a time.",
   },
   {
     id: 3,

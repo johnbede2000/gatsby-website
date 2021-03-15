@@ -17,14 +17,12 @@ const MinHeight = styled.div`
 // markup - N.B. not currently using Layout component used on every other page
 const IndexPage = () => {
   return (
-    <>
-      <MinHeight>
-        <Nav curr="Home" />
-        <Hero />
+    <MinHeight>
+      <Nav curr="Home" />
+      <Hero />
 
-        <Footer />
-      </MinHeight>
-    </>
+      <Footer />
+    </MinHeight>
   );
 };
 

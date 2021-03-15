@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import SEO from '../components/Seo';
 
 // styles
 
@@ -18,6 +19,7 @@ const MinHeight = styled.div`
 const IndexPage = () => {
   return (
     <MinHeight>
+      <SEO title="Home" />
       <Nav curr="Home" />
       <Hero />
 

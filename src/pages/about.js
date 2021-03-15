@@ -7,7 +7,10 @@ import SEO from '../components/Seo';
 const about = () => {
   return (
     <Layout curr="about">
-      <SEO title="About" />
+      <SEO
+        title="About"
+        description="Biography of London jazz pianist & composer John Cervantes. With photo and press quotes."
+      />
       <About />
       <Quotes />
     </Layout>

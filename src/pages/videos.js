@@ -7,7 +7,10 @@ import YTbutton from '../components/YTbutton';
 const videos = () => {
   return (
     <Layout curr="videos">
-      <SEO title="Videos" />
+      <SEO
+        title="Videos"
+        description="Watch videos of London jazz pianist & composer John Cervantes. Also links to more videos on YouTube."
+      />
       <Videos />
       <YTbutton />
     </Layout>

@@ -8,7 +8,10 @@ import { Center } from '../css/globalstyles';
 const music = () => {
   return (
     <Layout curr="music">
-      <SEO title="Music" />
+      <SEO
+        title="Music"
+        description="Listen to streaming music by London jazz pianist & composer John Cervantes. Also find links to other streaming services."
+      />
       <Center style={{ minHeight: 'calc(100vh - 17rem)' }}>
         <MusicHolding />
       </Center>

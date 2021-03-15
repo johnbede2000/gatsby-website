@@ -15,7 +15,10 @@ const TwoColumns = styled.div`
 const news = () => {
   return (
     <Layout curr="news">
-      <SEO title="News" />
+      <SEO
+        title="News"
+        description="Read the latest news about London jazz pianist & composer John Cervantes."
+      />
       <TwoColumns>
         <NewsAbout />
         <Infinite />

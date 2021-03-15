@@ -17,8 +17,8 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`, // would I need a slash before the image path
-    url: `${siteUrl}${pathname}`, // do I need a slash in between?
+    image: `${siteUrl}${image || defaultImage}`, // would I need a slash before the image path, prob not?
+    url: `${siteUrl}${pathname}`, // doesn't need slash in between
   };
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>

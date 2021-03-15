@@ -5,7 +5,12 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'John Cervantes | Jazz Pianist & Composer',
-    siteURL: 'https://wwww.johncervantes.co.uk',
+    titleTemplate: '%s | John Cervantes',
+    description:
+      'The website of London jazz pianist & composer John Cervantes. Including streaming music, vidoes, news and events.',
+    url: 'https://wwww.johncervantes.co.uk', // No trailing slash allowed!
+    image:
+      'https://res.cloudinary.com/dd23iaiap/image/upload/v1606216949/www.johncervantes.co.uk_about.html_iPad_ydzupr.png', // Or use path to an image placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-sharp`,

@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: '%s | John Cervantes - jazz pianist & composer',
     description:
       'The website of London jazz pianist & composer John Cervantes. Including streaming music, videos, news, and live events.',
-    url: 'https://wwww.johncervantes.co.uk', // No trailing slash allowed!
+    siteUrl: 'https://wwww.johncervantes.co.uk', // No trailing slash allowed!
     image:
       'https://res.cloudinary.com/dd23iaiap/image/upload/v1606216949/www.johncervantes.co.uk_about.html_iPad_ydzupr.png', // Or use path to an image placed in the 'static' folder
   },
@@ -17,8 +17,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    // `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/success`],
+      },
+    }`gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,

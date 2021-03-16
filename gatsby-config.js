@@ -22,7 +22,8 @@ module.exports = {
       options: {
         exclude: [`/success`],
       },
-    }`gatsby-transformer-sharp`,
+    },
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,

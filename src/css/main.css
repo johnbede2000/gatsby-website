@@ -11,6 +11,14 @@
   box-sizing: inherit;
 }
 
+:root {
+  --mobnav-height: 5em;
+  --text-light: rgba(255, 255, 255, 0.7);
+  --raise-one: #222222;
+  --raise-two: #2e2e2e;
+  --vertical-gap: 2rem;
+}
+
 html {
   box-sizing: border-box;
   width: 100%;
@@ -25,16 +33,6 @@ body {
   width: 100%;
 }
 
-main {
-  margin-top: var(--topnav-height);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 a {
   color: var(--text-light);
   text-decoration: none;
@@ -44,23 +42,10 @@ a:hover {
   color: white;
 }
 
-:root {
-  --mobnav-height: 5em;
-  --text-light: rgba(255, 255, 255, 0.7);
-  --raise-one: #222222;
-  --raise-two: #2e2e2e;
-  --vertical-gap: 2rem;
-}
-
+/* blockquote tag created by contentful markdown for news item component */
 blockquote {
   background: var(--raise-two);
   border-left: 10px solid #ccc;
   margin: 1em 0;
   padding: 0 10px;
-}
-
-footer {
-  font-size: 1.25rem;
-  text-align: center;
-  width: 100%;
 }

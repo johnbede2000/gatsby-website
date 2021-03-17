@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 // import Music from '../components/Music';
 import MusicHolding from '../components/MusicHolding';
 import SEO from '../components/Seo';
-import { Center } from '../css/globalstyles';
+import { Center } from '../css/sharedStyledComps';
 
 const music = () => {
   return (

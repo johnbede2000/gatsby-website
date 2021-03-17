@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../css/globalstyles';
+import { Button } from '../css/sharedStyledComps';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const Row = styled.div`

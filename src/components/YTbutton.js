@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../css/globalstyles';
+import { Button } from '../css/sharedStyledComps';
 import styled from 'styled-components';
 
 const Div = styled.div`

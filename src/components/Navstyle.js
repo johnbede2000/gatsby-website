@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { WidthContainer } from '../css/globalstyles';
+import { WidthContainer } from '../css/sharedStyledComps';
 
 // styled components
 // default is closed mobile, then open mobile, then media query desktop!

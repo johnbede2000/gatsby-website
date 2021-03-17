@@ -1,5 +1,5 @@
 import React from 'react';
-import { WidthContainer } from '../css/globalstyles';
+import { WidthContainer } from '../css/sharedStyledComps';
 import styled from 'styled-components';
 import { FaSpotify, FaApple, FaAmazon } from 'react-icons/fa';
 import { ImSoundcloud } from 'react-icons/im';

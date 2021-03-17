@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
-import { WidthContainer } from '../css/globalstyles';
+import { WidthContainer } from '../css/sharedStyledComps';
 import styled from 'styled-components';
 
 const MinHeight = styled.div`

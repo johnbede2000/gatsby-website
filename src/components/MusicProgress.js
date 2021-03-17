@@ -1,7 +1,7 @@
 import { musicData } from '../content/music';
-import { WidthContainer, Button } from '../css/globalstyles';
+import { WidthContainer, Button } from '../css/sharedStyledComps';
 import React from 'react';
-import Amplitude from 'amplitudejs';
+// import Amplitude from 'amplitudejs';
 
 // Amplitude.init({
 //   songs: [

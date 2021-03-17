@@ -11,29 +11,34 @@ const extLinks = [
   {
     id: 1,
     icon: <FaSpotify />,
+    label: 'Spotify',
     url:
       'https://open.spotify.com/artist/64v43yzaVfp7hrdFDFKloJ?si=Em-oNQ6oQ8qyCDUIYWHmdg',
   },
   {
     id: 2,
     icon: <SiDeezer />,
+    label: 'Deezer',
     url: 'https://www.deezer.com/en/artist/11527643',
   },
   {
     id: 3,
     icon: <ImSoundcloud />,
+    label: 'Soundcloud',
     url: 'https://soundcloud.com/johncervantes',
   },
 
   {
     id: 4,
     icon: <FaAmazon />,
+    label: 'Amazon Music',
     url: 'https://music.amazon.co.uk/artists/B01N7G6HFZ/john-cervantes',
   },
 
   {
     id: 6,
     icon: <FaApple />,
+    label: 'Apple Music',
     url: 'https://music.apple.com/gb/artist/john-cervantes/1184527405',
   },
 ];
@@ -76,7 +81,7 @@ const Footer = () => {
         <ExternalLinks>
           {extLinks.map((link) => {
             return (
-              <Footerlink key={link.id} href={link.url}>
+              <Footerlink key={link.id} href={link.url} aria-label={link.label}>
                 {link.icon}
               </Footerlink>
             );

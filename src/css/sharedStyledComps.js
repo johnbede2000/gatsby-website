@@ -31,3 +31,9 @@ export const Center = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const VerticalGap = styled.div`
+  & > * + * {
+    margin-top: var(--vertical-gap);
+  }
+`;

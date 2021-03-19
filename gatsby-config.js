@@ -13,6 +13,7 @@ module.exports = {
       'https://res.cloudinary.com/dd23iaiap/image/upload/v1606216949/www.johncervantes.co.uk_about.html_iPad_ydzupr.png', // Or use path to an image placed in the 'static' folder
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,

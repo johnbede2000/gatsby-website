@@ -10,12 +10,19 @@ import {
   Musicians,
   Credits,
 } from './MusicStyles';
+import { Dialog } from '@material-ui/core';
 
 const CrossingThe = () => {
+  const [playIsOpen, SetPlayIsOpen] = React.useState(false);
+
+  const handleClose = () => {
+    SetPlayIsOpen(false);
+  };
+
   // You should set loading to "eager" for above-the-fold images to ensure they start loading before React hydration
   return (
     <>
-      <h1>Crossing The Threshold</h1>
+      <h1>Crossing The Threshold (2014)</h1>
       <h4 style={{ color: 'var(--text-light)' }}>
         An intoxicating mesh of hand claps, foot stamps, jazz harmony,
         improvisation, and dance
@@ -27,7 +34,7 @@ const CrossingThe = () => {
             alt="Crossing The Threshold album cover"
             loading="eager"
           />
-          <PlayButton>Play</PlayButton>
+          <PlayButton onClick={() => SetPlayIsOpen(true)}>Play</PlayButton>
         </AlbumCover>
         <AlbumText>
           <p>
@@ -90,6 +97,9 @@ const CrossingThe = () => {
           </SmallerFlex>
         </AlbumText>
       </Flex>
+      <Dialog open={playIsOpen} onClose={handleClose}>
+        <p>hello</p>
+      </Dialog>
     </>
   );
 };

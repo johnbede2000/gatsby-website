@@ -17,6 +17,7 @@
   --raise-one: #222222;
   --raise-two: #2e2e2e;
   --vertical-gap: 2rem;
+  --bg-color: #121212;
 }
 
 html {
@@ -28,7 +29,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: #121212;
+  background-color: var(--bg-color);
   height: 100%;
   width: 100%;
 }

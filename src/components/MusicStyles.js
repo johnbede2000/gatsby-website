@@ -10,6 +10,18 @@ const Flex = styled.div`
   }
 `;
 
+const LinkIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-size: 4rem;
+  & > * + * {
+    margin-top: var(--vertical-gap);
+  }
+`;
+
 const SmallerFlex = styled.div`
   font-size: 0.75rem;
   display: flex;
@@ -91,4 +103,5 @@ export {
   Quote,
   Musicians,
   Credits,
+  LinkIcons,
 };

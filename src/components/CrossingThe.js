@@ -9,8 +9,12 @@ import {
   Quote,
   Musicians,
   Credits,
+  LinkIcons,
 } from './MusicStyles';
 import { Dialog } from '@material-ui/core';
+import { FaSpotify, FaApple, FaAmazon } from 'react-icons/fa';
+import { ImSoundcloud } from 'react-icons/im';
+import { SiDeezer } from 'react-icons/si';
 
 const CrossingThe = () => {
   const [playIsOpen, SetPlayIsOpen] = React.useState(false);
@@ -98,7 +102,13 @@ const CrossingThe = () => {
         </AlbumText>
       </Flex>
       <Dialog open={playIsOpen} onClose={handleClose}>
-        <p>hello</p>
+        <LinkIcons>
+          <FaSpotify />
+          <FaApple />
+          <FaAmazon />
+          <ImSoundcloud />
+          <SiDeezer />
+        </LinkIcons>
       </Dialog>
     </>
   );

@@ -3,24 +3,53 @@ import { StaticImage } from 'gatsby-plugin-image';
 import {
   Flex,
   SmallerFlex,
-  PlayButton,
+  ListenButton,
   AlbumCover,
   AlbumText,
   Quote,
   Musicians,
   Credits,
-  LinkIcons,
 } from './MusicStyles';
-import { Dialog } from '@material-ui/core';
+import {
+  Dialog,
+  List,
+  ListItemAvatar,
+  Avatar,
+  ListItem,
+  ListItemText,
+  DialogTitle,
+} from '@material-ui/core';
 import { FaSpotify, FaApple, FaAmazon } from 'react-icons/fa';
 import { ImSoundcloud } from 'react-icons/im';
 import { SiDeezer } from 'react-icons/si';
+import { makeStyles } from '@material-ui/core/styles';
+
+const services = [
+  { id: 1, text: 'Spotify', icon: <FaSpotify /> },
+  {
+    id: 2,
+    text: 'Apple Music',
+    icon: <FaApple />,
+  },
+];
+
+const useStyles = makeStyles({
+  icon: {
+    backgroundColor: 'var(--bg-color)',
+    color: 'white',
+  },
+});
 
 const CrossingThe = () => {
   const [playIsOpen, SetPlayIsOpen] = React.useState(false);
 
   const handleClose = () => {
     SetPlayIsOpen(false);
+  };
+
+  const classes = useStyles();
+  const handleListItemClick = (service) => {
+    console.log(service);
   };
 
   // You should set loading to "eager" for above-the-fold images to ensure they start loading before React hydration
@@ -38,7 +67,9 @@ const CrossingThe = () => {
             alt="Crossing The Threshold album cover"
             loading="eager"
           />
-          <PlayButton onClick={() => SetPlayIsOpen(true)}>Play</PlayButton>
+          <ListenButton onClick={() => SetPlayIsOpen(true)}>
+            Listen
+          </ListenButton>
         </AlbumCover>
         <AlbumText>
           <p>
@@ -101,14 +132,29 @@ const CrossingThe = () => {
           </SmallerFlex>
         </AlbumText>
       </Flex>
-      <Dialog open={playIsOpen} onClose={handleClose}>
-        <LinkIcons>
-          <FaSpotify />
-          <FaApple />
-          <FaAmazon />
-          <ImSoundcloud />
-          <SiDeezer />
-        </LinkIcons>
+
+      <Dialog
+        open={playIsOpen}
+        onClose={handleClose}
+        aria-labelledby="listen-crossing-album"
+      >
+        <DialogTitle id="listen-crossing-album">
+          Select Streaming Service
+        </DialogTitle>
+        <List>
+          {services.map((service) => (
+            <ListItem
+              button
+              onClick={() => handleListItemClick(service.id)}
+              key={service.id}
+            >
+              <ListItemAvatar>
+                <Avatar className={classes.icon}>{service.icon}</Avatar>
+              </ListItemAvatar>
+              <ListItemText primary={service.text} />
+            </ListItem>
+          ))}
+        </List>
       </Dialog>
     </>
   );

@@ -25,12 +25,31 @@ import { SiDeezer } from 'react-icons/si';
 import { makeStyles } from '@material-ui/core/styles';
 
 const services = [
-  { id: 1, text: 'Spotify', icon: <FaSpotify /> },
+  {
+    id: 1,
+    text: 'Spotify',
+    icon: <FaSpotify />,
+    url: 'https://www.spotify.com',
+  },
   {
     id: 2,
     text: 'Apple Music',
     icon: <FaApple />,
+    url: 'https://www.spotify.com',
   },
+  {
+    id: 3,
+    text: 'Amazon Music',
+    icon: <FaAmazon />,
+    url: 'https://www.spotify.com',
+  },
+  {
+    id: 4,
+    text: 'SoundCloud',
+    icon: <ImSoundcloud />,
+    url: 'https://www.spotify.com',
+  },
+  { id: 5, text: 'Deezer', icon: <SiDeezer />, url: 'https://www.spotify.com' },
 ];
 
 const useStyles = makeStyles({
@@ -138,9 +157,7 @@ const CrossingThe = () => {
         onClose={handleClose}
         aria-labelledby="listen-crossing-album"
       >
-        <DialogTitle id="listen-crossing-album">
-          Select Streaming Service
-        </DialogTitle>
+        <DialogTitle id="listen-crossing-album">Select Service</DialogTitle>
         <List>
           {services.map((service) => (
             <ListItem

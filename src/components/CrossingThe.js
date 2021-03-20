@@ -19,9 +19,10 @@ import {
   ListItemText,
   DialogTitle,
 } from '@material-ui/core';
-import { FaSpotify, FaApple, FaAmazon } from 'react-icons/fa';
-import { ImSoundcloud } from 'react-icons/im';
-import { SiDeezer } from 'react-icons/si';
+import { FaSpotify, FaApple, FaAmazon, FaYoutube } from 'react-icons/fa';
+// import { ImSoundcloud } from 'react-icons/im';
+// import {SiPandora } from 'react-icons/si';
+import { SiDeezer, SiTidal } from 'react-icons/si';
 import { makeStyles } from '@material-ui/core/styles';
 
 const services = [
@@ -29,27 +30,46 @@ const services = [
     id: 1,
     text: 'Spotify',
     icon: <FaSpotify />,
-    url: 'https://www.spotify.com',
+    url: 'https://open.spotify.com/album/6Qmx8wB3lSR8pjqmEtaFr0',
   },
   {
     id: 2,
     text: 'Apple Music',
     icon: <FaApple />,
-    url: 'https://www.spotify.com',
+    url: 'https://music.apple.com/us/album/crossing-the-threshold/1184526967',
   },
   {
     id: 3,
     text: 'Amazon Music',
     icon: <FaAmazon />,
-    url: 'https://www.spotify.com',
+    url: 'https://music.amazon.co.uk/albums/B01N7GA20A',
   },
-  {
+  /*{
     id: 4,
     text: 'SoundCloud',
     icon: <ImSoundcloud />,
     url: 'https://www.spotify.com',
+  },*/
+  {
+    id: 5,
+    text: 'Deezer',
+    icon: <SiDeezer />,
+    url: 'https://www.deezer.com/en/album/14797475',
   },
-  { id: 5, text: 'Deezer', icon: <SiDeezer />, url: 'https://www.spotify.com' },
+  {
+    id: 6,
+    text: 'Tidal',
+    icon: <SiTidal />,
+    url: 'https://listen.tidal.com/album/68034546',
+  },
+  {
+    id: 7,
+    text: 'YouTube Music',
+    icon: <FaYoutube />,
+    url:
+      'https://music.youtube.com/playlist?list=OLAK5uy_lqtWStKmvv0hIufra5cUfuHsjjLFuC5HQ',
+  },
+  /*{ id: 8, text: 'Pandora', icon: <SiPandora />, url: '' },*/
 ];
 
 const useStyles = makeStyles({
@@ -67,9 +87,6 @@ const CrossingThe = () => {
   };
 
   const classes = useStyles();
-  const handleListItemClick = (service) => {
-    console.log(service);
-  };
 
   // You should set loading to "eager" for above-the-fold images to ensure they start loading before React hydration
   return (
@@ -106,9 +123,8 @@ const CrossingThe = () => {
             those undefinable flashes of life, creation, emotion and passion
             into my own medium – instrumental jazz compositions. Seeming like a
             good cohesive theme to hold an album project together, I ventured
-            forth on this musical adventure, crossing the threshold of releasing
-            an album under my name. I chose various flamenco styles that
-            particularly resonated with me, and used those as compositional
+            forth on this musical adventure. I chose various flamenco styles
+            that particularly resonated with me, and used those as compositional
             starting points."
           </Quote>
           <SmallerFlex>
@@ -157,12 +173,16 @@ const CrossingThe = () => {
         onClose={handleClose}
         aria-labelledby="listen-crossing-album"
       >
-        <DialogTitle id="listen-crossing-album">Select Service</DialogTitle>
+        <DialogTitle id="listen-crossing-album">
+          Choose your preferred music service
+        </DialogTitle>
         <List>
           {services.map((service) => (
             <ListItem
               button
-              onClick={() => handleListItemClick(service.id)}
+              onClick={() => {
+                window.open(service.url, '_blank');
+              }}
               key={service.id}
             >
               <ListItemAvatar>

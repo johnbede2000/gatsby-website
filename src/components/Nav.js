@@ -30,9 +30,6 @@ const urls = [
 
 const Nav = ({ curr }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <NoGrow>
@@ -40,7 +37,7 @@ const Nav = ({ curr }) => {
         <WidthContainer>
           <Mobitems>
             <Currentpage className={isOpen ? 'open' : null}>{curr}</Currentpage>
-            <ToggleButton onClick={toggleMenu}>
+            <ToggleButton onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </ToggleButton>
           </Mobitems>
@@ -51,7 +48,11 @@ const Nav = ({ curr }) => {
           {urls.map((page) => {
             return (
               <Li key={page.id}>
-                <Navlink activeStyle={current} to={page.url}>
+                <Navlink
+                  activeStyle={current}
+                  to={page.url}
+                  onClick={() => setIsOpen(!isOpen)}
+                >
                   {page.text}
                 </Navlink>
               </Li>

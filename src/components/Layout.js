@@ -21,13 +21,14 @@ const Main = styled(WidthContainer)`
 
 const Layout = ({ children, curr }) => {
   return (
-    <GlobalStyle>
+    <>
+      <GlobalStyle />
       <MinHeight>
         <Nav curr={curr} />
         <Main as="main">{children}</Main>
         <Footer />
       </MinHeight>
-    </GlobalStyle>
+    </>
   );
 };
 

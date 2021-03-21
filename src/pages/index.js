@@ -19,7 +19,8 @@ const MinHeight = styled.div`
 // markup - N.B. not currently using Layout component used on every other page
 const IndexPage = () => {
   return (
-    <GlobalStyle>
+    <>
+      <GlobalStyle />
       <MinHeight>
         <SEO title="Home" />
         <Nav curr="Home" />
@@ -27,7 +28,7 @@ const IndexPage = () => {
 
         <Footer />
       </MinHeight>
-    </GlobalStyle>
+    </>
   );
 };
 

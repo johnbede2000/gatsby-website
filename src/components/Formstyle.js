@@ -7,6 +7,7 @@ const Form = styled.form`
   border-radius: 0.5rem;
 `;
 
+// check whether this similar to button styes already written out
 const Button = styled.button`
   width: 100%;
   color: white;

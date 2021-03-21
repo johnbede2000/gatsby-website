@@ -1,10 +1,5 @@
+import React from 'react';
 import styled from 'styled-components';
-
-export const WidthContainer = styled.div`
-  max-width: 1170px;
-  width: 90vw;
-  margin: 0 auto;
-`;
 
 export const Button = styled.a`
   background: none;
@@ -26,14 +21,24 @@ export const Button = styled.a`
   }
 `;
 
-export const Center = styled.div`
+const Div = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding-top: var(--vertical-gap);
 `;
 
-export const VerticalGap = styled.div`
-  & > * + * {
-    margin-top: var(--vertical-gap);
-  }
+const H4 = styled.h4`
+  padding-bottom: 0.5rem;
 `;
+
+export const YTbutton = () => {
+  return (
+    <Div>
+      <H4>Watch more:</H4>
+      <Button href="https://www.youtube.com/c/JohnCervantesProfile/videos">
+        Youtube
+      </Button>
+    </Div>
+  );
+};

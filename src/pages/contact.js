@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Form from '../components/Form';
-import { Center } from '../css/sharedStyledComps';
+import { Center } from '../components/utilities';
 import SEO from '../components/Seo';
 
 export default function Contact() {

@@ -1,4 +1,5 @@
 /* ===== RESET / SETUP ===== */
+/* move to createGlobalStyle */
 
 * {
   margin: 0;
@@ -11,6 +12,7 @@
   box-sizing: inherit;
 }
 
+/* Move variables to ThemeProvider */
 :root {
   --mobnav-height: 5em;
   --text-light: rgba(255, 255, 255, 0.7);
@@ -43,7 +45,7 @@ a:hover {
   color: white;
 }
 
-/* blockquote tag created by contentful markdown for news item component */
+/* blockquote tag created by contentful markdown used in Newsitem */
 blockquote {
   background: var(--raise-two);
   border-left: 10px solid #ccc;

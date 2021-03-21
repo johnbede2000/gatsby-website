@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import Videos from '../components/Videos';
-import YTbutton from '../components/YTbutton';
+import { YTbutton } from '../components/buttons';
 
 const videos = () => {
   return (

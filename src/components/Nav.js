@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { WidthContainer } from '../css/sharedStyledComps';
+import { WidthContainer } from './utilities';
 import {
   NoGrow,
   Headstrip,

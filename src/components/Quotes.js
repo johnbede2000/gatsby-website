@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Section, OneQuote, Text, Image, Source } from './Quotesstyle';
+import { Section, OneQuote, Text, Image, Source } from './quotesstyle';
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';

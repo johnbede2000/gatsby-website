@@ -12,7 +12,7 @@ import {
   ToggleButton,
   Currentpage,
   current,
-} from './Navstyle';
+} from './navstyle';
 
 // data
 

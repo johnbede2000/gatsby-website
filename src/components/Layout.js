@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { WidthContainer } from './utilities';
 import styled from 'styled-components';
+import { GlobalStyle } from './GlobalStyle';
 
 const MinHeight = styled.div`
   display: flex;
@@ -20,11 +21,13 @@ const Main = styled(WidthContainer)`
 
 const Layout = ({ children, curr }) => {
   return (
-    <MinHeight>
-      <Nav curr={curr} />
-      <Main as="main">{children}</Main>
-      <Footer />
-    </MinHeight>
+    <GlobalStyle>
+      <MinHeight>
+        <Nav curr={curr} />
+        <Main as="main">{children}</Main>
+        <Footer />
+      </MinHeight>
+    </GlobalStyle>
   );
 };
 

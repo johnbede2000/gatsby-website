@@ -8,19 +8,17 @@ import { Helmet } from 'react-helmet';
 // markup
 const NotFoundPage = () => {
   return (
-    <>
-      <Layout curr="">
-        <Helmet
-          htmlAttributes={{
-            lang: 'en',
-          }}
-        />
-        <div className="text">
-          <h1>Page Not Found</h1>
-          <Link to="/">Home</Link>
-        </div>
-      </Layout>
-    </>
+    <Layout curr="">
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      />
+      <div className="text">
+        <h1>Page Not Found</h1>
+        <Link to="/">Home</Link>
+      </div>
+    </Layout>
   );
 };
 

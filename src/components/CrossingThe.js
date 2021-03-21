@@ -9,7 +9,7 @@ import {
   Quote,
   Musicians,
   Credits,
-} from './MusicStyles';
+} from './musicStyles';
 import {
   Dialog,
   List,

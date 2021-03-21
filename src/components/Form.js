@@ -1,4 +1,4 @@
-import { Form, Button, Input } from './Formstyle';
+import { Form, Button, Input } from './formstyle';
 import React from 'react';
 import { navigate } from 'gatsby-link';
 

@@ -25,7 +25,7 @@ const query = graphql`
 
 // styling
 const Section = styled.section`
-  padding-top: var(--vertical-gap);
+  padding-top: ${(props) => props.theme.spacing.verticalGap};
   position: relative;
   width: 100%;
   height: 500px;
@@ -42,7 +42,7 @@ const OneQuote = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  background-color: var(--raise-one);
+  background-color: ${(props) => props.theme.colors.raiseOne};
   border-radius: 10px;
   padding: 1em;
   opacity: 0;

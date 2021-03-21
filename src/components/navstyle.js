@@ -11,12 +11,12 @@ const NoGrow = styled.div`
 `;
 
 const Headstrip = styled.header`
-  background-color: var(--raise-one);
+  background-color: ${(props) => props.theme.colors.raiseOne};
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: var(--mobnav-height);
+  height: ${(props) => props.theme.spacing.mobnavHeight};
 `;
 
 const Currentpage = styled.p`
@@ -25,7 +25,7 @@ const Currentpage = styled.p`
   color: white;
 
   &.open {
-    color: var(--raise-one);
+    color: ${(props) => props.theme.colors.raiseOne};
   }
 `;
 
@@ -34,7 +34,7 @@ const ToggleButton = styled.button`
   border: none;
   background: none;
   font-size: 2rem;
-  color: var(--text-light);
+  color: ${(props) => props.theme.colors.textLight};
   display: flex;
   align-items: center;
   z-index: 97;
@@ -62,13 +62,13 @@ const Mobitems = styled.div`
 
 const Mynav = styled(WidthContainer)`
   @media screen and (min-width: 768px) {
-    margin-top: calc(-1 * var(--mobnav-height));
+    margin-top: -${(props) => props.theme.spacing.mobnavHeight};
   }
 `;
 
 const Ul = styled.ul`
   display: none;
-  background-color: var(--raise-one);
+  background-color: ${(props) => props.theme.colors.raiseOne};
 
   &.open {
     display: flex;
@@ -86,7 +86,7 @@ const Ul = styled.ul`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    height: var(--mobnav-height);
+    height: ${(props) => props.theme.spacing.mobnavHeight};
     width: 100%;
     z-index: 96;
     justify-content: space-between;

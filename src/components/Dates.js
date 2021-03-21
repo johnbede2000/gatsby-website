@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const Row = styled.div`
   padding-bottom: 1em;
-  border-bottom: solid 1px var(--text-light);
+  border-bottom: solid 1px ${(props) => props.theme.colors.textLight};
   margin-top: 1em;
   &:last-of-type {
     border-bottom: none;

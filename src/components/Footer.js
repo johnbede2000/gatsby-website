@@ -45,10 +45,10 @@ const extLinks = [
 
 // style
 const StripofColor = styled.div`
-  background-color: var(--raise-one);
-  padding-top: var(--vertical-gap);
+  background-color: ${(props) => props.theme.colors.raiseOne};
+  padding-top: ${(props) => props.theme.spacing.verticalGap};
   width: 100%;
-  padding-bottom: var(--vertical-gap);
+  padding-bottom: ${(props) => props.theme.spacing.verticalGap};
   flex-grow: 0;
   flex-shrink: 0;
   height: 8rem;

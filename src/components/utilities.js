@@ -14,6 +14,6 @@ export const Center = styled.div`
 
 export const VerticalGap = styled.div`
   & > * + * {
-    margin-top: var(--vertical-gap);
+    margin-top: ${(props) => props.theme.spacing.verticalGap};
   }
 `;

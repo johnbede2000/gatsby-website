@@ -25,7 +25,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: var(--vertical-gap);
+  padding-top: ${(props) => props.theme.spacing.verticalGap};
 `;
 
 const H4 = styled.h4`

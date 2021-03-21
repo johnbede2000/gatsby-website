@@ -35,7 +35,7 @@ const Aboutpara = styled.div`
 const AboutImg = styled.div`
   float: none;
   width: 100%;
-  padding-bottom: var(--vertical-gap);
+  padding-bottom: ${(props) => props.theme.spacing.verticalGap};
 
   @media screen and (min-width: 610px) {
     float: right;
@@ -59,7 +59,7 @@ const Sidebar = styled.div`
 `;
 
 const Bio = styled(Aboutpara)`
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
 `;
 
 const About = () => {

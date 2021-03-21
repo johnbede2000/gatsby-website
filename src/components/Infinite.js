@@ -7,7 +7,7 @@ const Stream = styled.div`
   max-width: 500px;
 
   & > *:not(:first-child) {
-    margin-top: var(--vertical-gap);
+    margin-top: ${(props) => props.theme.spacing.verticalGap};
   }
 
   @media screen and (min-width: 768px) {

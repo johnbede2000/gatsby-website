@@ -39,10 +39,10 @@ const Parent = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 5px 15px var(--raise-one);
+  box-shadow: 0 5px 15px ${(props) => props.theme.colors.raiseOne};
   cursor: pointer;
   &:hover {
-    box-shadow: 0 5px 15px var(--raise-two);
+    box-shadow: 0 5px 15px ${(props) => props.theme.colors.raiseTwo};
   }
   &:hover img {
     transform: scale(1.2);
@@ -53,7 +53,7 @@ const Grid = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-  gap: var(--vertical-gap);
+  gap: ${(props) => props.theme.spacing.verticalGap};
   justify-content: space-between;
 `;
 
@@ -88,7 +88,7 @@ const Closebtn = styled.button`
   border: none;
   background: none;
   font-size: 2rem;
-  color: var(--text-light);
+  color: ${(props) => props.theme.colors.textLight};
   z-index: 99;
 
   &:hover {

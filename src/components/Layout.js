@@ -2,10 +2,10 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import { WidthContainer } from './utilities';
-import styled from 'styled-components';
-import { GlobalStyle } from './GlobalStyle';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from './GlobalStyle';
 
-const MinHeight = styled.div`
+export const MinHeight = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -13,22 +13,21 @@ const MinHeight = styled.div`
 
 const Main = styled(WidthContainer)`
   flex-grow: 1;
-  /* check syntax to change type of tag in this declaration rather than markup*/
-  padding-top: var(--vertical-gap);
-  padding-bottom: var(--vertical-gap);
+  padding-top: ${(props) => props.theme.spacing.verticalGap};
+  padding-bottom: ${(props) => props.theme.spacing.verticalGap};
   position: relative;
 `;
 
 const Layout = ({ children, curr }) => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <MinHeight>
         <Nav curr={curr} />
         <Main as="main">{children}</Main>
         <Footer />
       </MinHeight>
-    </>
+    </ThemeProvider>
   );
 };
 

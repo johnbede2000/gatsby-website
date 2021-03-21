@@ -43,12 +43,12 @@ const NewsCard = styled.div`
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
-    background-color: var(--raise-two);
+    background-color: ${(props) => props.theme.colors.raiseTwo};
     border-radius: 10px;
     flex-grow: 1;
     padding: 1rem;
     min-height: 30vh;
-    margin-right: var(--vertical-gap);
+    margin-right: ${(props) => props.theme.spacing.verticalGap};
   }
 `;
 

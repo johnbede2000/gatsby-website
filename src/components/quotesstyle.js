@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 const Section = styled.section`
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
   width: 100%;
   text-align: center;
   .swiper-pagination-bullet {
@@ -20,7 +20,7 @@ const OneQuote = styled.div`
   align-items: center;
   justify-content: center;
   height: 400px;
-  background-color: var(--raise-one);
+  background-color: ${(props) => props.theme.colors.raiseOne};
   border-radius: 10px;
   padding: 1em 1em 2.5em;
 `;

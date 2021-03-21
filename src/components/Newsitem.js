@@ -4,7 +4,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const Item = styled.div`
-  background-color: var(--raise-two);
+  background-color: ${(props) => props.theme.colors.raiseTwo};
   border-radius: 10px;
 `;
 

@@ -24,6 +24,8 @@ import { FaSpotify, FaApple, FaAmazon, FaYoutube } from 'react-icons/fa';
 // import {SiPandora } from 'react-icons/si';
 import { SiDeezer, SiTidal } from 'react-icons/si';
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
+import { theme } from './GlobalStyle';
 
 const services = [
   {
@@ -74,12 +76,16 @@ const services = [
 
 const useStyles = makeStyles({
   icon: {
-    backgroundColor: 'var(--bg-color)',
+    backgroundColor: theme.colors.raiseOne,
     color: 'white',
   },
 });
 
-const CrossingThe = () => {
+const Subtitle = styled.h4`
+  color: ${(props) => props.theme.colors.textLight};
+`;
+
+const CrossingThe = ({ theme }) => {
   const [playIsOpen, SetPlayIsOpen] = React.useState(false);
 
   const handleClose = () => {
@@ -92,10 +98,10 @@ const CrossingThe = () => {
   return (
     <>
       <h1>Crossing The Threshold (2014)</h1>
-      <h4 style={{ color: 'var(--text-light)' }}>
+      <Subtitle>
         An intoxicating mesh of hand claps, foot stamps, jazz harmony,
         improvisation, and dance
-      </h4>
+      </Subtitle>
       <Flex>
         <AlbumCover>
           <StaticImage

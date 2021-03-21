@@ -4,7 +4,7 @@ const Flex = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
   @media screen and (min-width: 600px) {
     flex-direction: row;
   }
@@ -15,14 +15,14 @@ const SmallerFlex = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
   @media screen and (min-width: 900px) {
     flex-direction: row;
   }
 `;
 
 const ListenButton = styled.div`
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
   background: none;
   color: white;
   border-radius: 2px;
@@ -54,7 +54,7 @@ const AlbumCover = styled.div`
 `;
 
 const AlbumText = styled.div`
-  padding-top: var(--vertical-gap);
+  padding-top: ${(props) => props.theme.spacing.verticalGap};
   @media screen and (min-width: 600px) {
     padding-left: 1rem;
     width: 60%;
@@ -64,7 +64,7 @@ const AlbumText = styled.div`
 
 const Quote = styled.p`
   font-style: italic;
-  margin-top: var(--vertical-gap);
+  margin-top: ${(props) => props.theme.spacing.verticalGap};
 `;
 
 const Musicians = styled.div`

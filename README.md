@@ -1,1 +1,3 @@
-Website built with [Gatsby](https://www.gatsbyjs.com/) and [Styled Components](https://styled-components.com/). The news feed and live dates page queries content from [Contentful](https://www.contentful.com/) (headless CMS).
+https:www.johncervantes.co.uk
+
+Website built with [Gatsby](https://www.gatsbyjs.com/) and [Styled Components](https://styled-components.com/). The news page and live dates page query content from [Contentful](https://www.contentful.com/).

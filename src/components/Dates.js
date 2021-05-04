@@ -35,6 +35,9 @@ const Band = styled.span`
     width: 20%;
     padding-right: 1rem;
   }
+  & a {
+    text-decoration: underline;
+  }
 `;
 
 const Venue = styled.span`
@@ -86,6 +89,7 @@ const Dates = () => {
           date(formatString: "DD MMM YYYY")
           venue
           bandname
+          bandnameLink
           link
         }
       }
@@ -98,7 +102,13 @@ const Dates = () => {
         return (
           <Row key={row.id}>
             <Date>{row.date}</Date>
-            <Band>{row.bandname}</Band>
+            <Band>
+              {row.bandnameLink ? (
+                <a href={row.bandnameLink}>{row.bandname}</a>
+              ) : (
+                row.bandname
+              )}
+            </Band>
             <Venue>{row.venue}</Venue>
             <City>{row.city}</City>
             <Tickets href={row.link}>Tickets</Tickets>

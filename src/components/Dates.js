@@ -82,7 +82,10 @@ const Tickets = styled(Button)`
 const Dates = () => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulGigs(sort: { fields: date, order: ASC }) {
+      allContentfulGigs(
+        filter: { isFuture: { eq: true } }
+        sort: { fields: date, order: ASC }
+      ) {
         nodes {
           city
           id

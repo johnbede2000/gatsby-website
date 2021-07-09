@@ -90,8 +90,10 @@ class Dates extends React.Component {
 
   componentDidMount() {
     fetch(
-      'https://eu-west-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/mygigs-xtsjg/service/mygigs/incoming_webhook/api?secret=insert'
-    );
+      `https://eu-west-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/mygigs-xtsjg/service/mygigs/incoming_webhook/api?secret=${process.env.MONGO_SECRET}`
+    ).then((response) => {
+      console.log(response);
+    });
   }
 
   render() {

@@ -99,38 +99,45 @@ class Dates extends React.Component {
       .then((json) => {
         this.setState({
           loading: false,
-          error: false,
           fetchedData: json,
         });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
       });
   }
 
   render() {
     const allgigs = this.state.fetchedData;
+    const loading = this.state.loading;
     console.log(allgigs);
     return (
       <div>
-        {allgigs.map((row) => {
-          return (
-            <Row key={row._id.$oid}>
-              <Date>
-                {moment(parseInt(row.date.$date.$numberLong)).format(
-                  'DD MMM YYYY'
-                )}
-              </Date>
-              <Band>
-                {row.bandnameLink ? (
-                  <a href={row.bandnameLink}>{row.bandname}</a>
-                ) : (
-                  row.bandname
-                )}
-              </Band>
-              <Venue>{row.venuename}</Venue>
-              <City>{row.city}</City>
-              <Tickets href={row.link}>Tickets</Tickets>
-            </Row>
-          );
-        })}
+        {loading ? (
+          <p>loading...</p>
+        ) : (
+          allgigs.map((row) => {
+            return (
+              <Row key={row._id.$oid}>
+                <Date>
+                  {moment(parseInt(row.date.$date.$numberLong)).format(
+                    'DD MMM YYYY'
+                  )}
+                </Date>
+                <Band>
+                  {row.bandnameLink ? (
+                    <a href={row.bandnameLink}>{row.bandname}</a>
+                  ) : (
+                    row.bandname
+                  )}
+                </Band>
+                <Venue>{row.venuename}</Venue>
+                <City>{row.city}</City>
+                <Tickets href={row.link}>Tickets</Tickets>
+              </Row>
+            );
+          })
+        )}
       </div>
     );
   }

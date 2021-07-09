@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flattenDiagnosticMessageText } from 'typescript';
+import moment from 'moment';
 import { Button } from './buttons';
 
 const Row = styled.div`
@@ -113,7 +113,11 @@ class Dates extends React.Component {
         {allgigs.map((row) => {
           return (
             <Row key={row._id.$oid}>
-              <Date>{row.date.$date.$numberLong}</Date>
+              <Date>
+                {moment(parseInt(row.date.$date.$numberLong)).format(
+                  'DD MMM YYYY'
+                )}
+              </Date>
               <Band>
                 {row.bandnameLink ? (
                   <a href={row.bandnameLink}>{row.bandname}</a>
@@ -121,7 +125,7 @@ class Dates extends React.Component {
                   row.bandname
                 )}
               </Band>
-              <Venue>{row.venue}</Venue>
+              <Venue>{row.venuename}</Venue>
               <City>{row.city}</City>
               <Tickets href={row.link}>Tickets</Tickets>
             </Row>

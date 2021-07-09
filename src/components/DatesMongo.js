@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { flattenDiagnosticMessageText } from 'typescript';
 import { Button } from './buttons';
 
 const Row = styled.div`
@@ -84,41 +85,48 @@ class Dates extends React.Component {
     this.state = {
       loading: true,
       error: false,
-      fetchedData: {},
+      fetchedData: [],
     };
   }
 
   componentDidMount() {
     fetch(
       `https://eu-west-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/mygigs-xtsjg/service/mygigs/incoming_webhook/api?secret=${process.env.MONGO_SECRET}`
-    ).then((response) => {
-      console.log(response);
-    });
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        this.setState({
+          loading: false,
+          error: false,
+          fetchedData: json,
+        });
+      });
   }
 
   render() {
+    const allgigs = this.state.fetchedData;
+    console.log(allgigs);
     return (
       <div>
-        {`hello. This is the date: ${'hello'}`}
-        {/*
-      {allgigs.map((row) => {
-        return (
-          <Row key={row.id}>
-            <Date>{row.date}</Date>
-            <Band>
-              {row.bandnameLink ? (
-                <a href={row.bandnameLink}>{row.bandname}</a>
-              ) : (
-                row.bandname
-              )}
-            </Band>
-            <Venue>{row.venue}</Venue>
-            <City>{row.city}</City>
-            <Tickets href={row.link}>Tickets</Tickets>
-          </Row>
-        );
-      })}
-    */}
+        {allgigs.map((row) => {
+          return (
+            <Row key={row._id.$oid}>
+              <Date>{row.date.$date.$numberLong}</Date>
+              <Band>
+                {row.bandnameLink ? (
+                  <a href={row.bandnameLink}>{row.bandname}</a>
+                ) : (
+                  row.bandname
+                )}
+              </Band>
+              <Venue>{row.venue}</Venue>
+              <City>{row.city}</City>
+              <Tickets href={row.link}>Tickets</Tickets>
+            </Row>
+          );
+        })}
       </div>
     );
   }
